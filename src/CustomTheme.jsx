@@ -39,14 +39,15 @@ export const theme = createTheme({
       fontSize: 16,
    },
    typography: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Raleway', 'sans-serif'].join(','),
+
       h1: {
-         fontSize: 66,
-         '@media (max-width:480px)': {
+         fontSize: 62,
+         '@media (max-width:992px)': {
             fontSize: 54,
          },
-         '@media (max-width:360px)': {
-            fontSize: 44,
+         '@media (max-width:768px)': {
+            fontSize: 38,
          },
       },
       h2: {
@@ -59,17 +60,15 @@ export const theme = createTheme({
          },
       },
       h3: {
-         '@media (max-width:480px)': {
-            fontSize: 32,
+         fontSize: 28,
+         '@media (max-width:992px)': {
+            fontSize: 22,
          },
-         '@media (max-width:360px)': {
-            fontSize: 28,
+         '@media (max-width:768px)': {
+            fontSize: 20,
          },
       },
 
-      h4: {
-         fontSize: 16,
-      },
       body1: { fontSize: 14 },
 
       button: {

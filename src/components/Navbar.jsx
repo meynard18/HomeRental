@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Toolbar, CssBaseline, AppBar, Typography } from '@mui/material';
+import {
+   Toolbar,
+   CssBaseline,
+   AppBar,
+   Typography,
+   Box,
+   Container,
+} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme } from '@mui/material/styles';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -64,8 +71,9 @@ function ElevationScroll(props) {
    return React.cloneElement(children, {
       style: {
          backgroundColor: trigger
-            ? `${theme.palette.grey[600]}`
-            : 'transparent',
+            ? `white`
+            : // ? `${theme.palette.grey[600]}`
+              'transparent',
       },
    });
 }
@@ -77,7 +85,7 @@ function Navbar() {
    return (
       <>
          <ElevationScroll>
-            <AppBar position="sticky" elevation={0}>
+            <StyledAppBar position="sticky" elevation={0}>
                <CssBaseline />
                <StyledToolbar>
                   <Link to="/">
@@ -98,13 +106,17 @@ function Navbar() {
                      </div>
                   )}
                </StyledToolbar>
-            </AppBar>
+            </StyledAppBar>
          </ElevationScroll>
       </>
    );
 }
 
 export default Navbar;
+const StyledAppBar = styled(AppBar)`
+   max-width: 1436px;
+   margin: auto;
+`;
 const StyledToolbar = styled(Toolbar)`
    width: 90%;
    justify-content: space-between;
@@ -115,20 +127,6 @@ const StyledToolbar = styled(Toolbar)`
 const StyledLink = styled(Link)`
    text-decoration: none;
    color: ${theme.palette.black[600]};
-   padding: 0.25rem 0.5rem;
+   padding: 0.25rem 0.75rem;
+   font-weight: 500;
 `;
-
-// const toolbar = {
-//    width: '90%',
-//    margin: 'auto',
-//    display: 'flex',
-//    justifyContent: 'space-between',
-// };
-// const navlinks = {
-//    backgroundColor: 'red',
-//    margin: '10rem',
-// };
-// const link = {
-//    backgroundColor: 'red',
-//    // color: 'red',
-// };
