@@ -22,14 +22,13 @@ const Featured = () => {
                <Typography
                   variant="h3"
                   component="h3"
-                  sx={{ fontWeight: 600, fontSize: 40, mt: 1 }}
+                  sx={{ fontWeight: 500, fontSize: 40, mt: 1 }}
                >
                   Lorem Ipsum Homes
                </Typography>
             </HeaderBox>
             <FeaturedCards />
          </StyledBox>
-         <GreyBackground maxWidth="xxl" sx={{ m: 'auto' }}></GreyBackground>
       </>
    );
 };
@@ -37,15 +36,24 @@ const Featured = () => {
 export default Featured;
 
 const StyledBox = styled(Box)`
-   background-color: ${theme.palette.bg.main};
+   // background-color: ${theme.palette.bg.main};
+   background: -moz-linear-gradient(
+      top,
+      ${theme.palette.bg.main} 50%,
+      ${theme.palette.grey[500]} 50%
+   );
+   background: -webkit-linear-gradient(
+      top,
+      ${theme.palette.bg.main} 50%,
+      ${theme.palette.grey[500]} 50%
+   );
+   background: linear-gradient(
+      to bottom,
+      ${theme.palette.bg.main} 50%,
+      ${theme.palette.grey[500]} 50%
+   );
+   padding-bottom: 5rem;
    margin-top: -1.25rem;
-   height: 60vh;
-`;
-
-const GreyBackground = styled(Box)`
-   background-color: ${theme.palette.grey[300]};
-   min-height: 50vh;
-   padding: 5rem 0;
 `;
 const FlexFeatured = styled(Box)`
    display: flex;
@@ -62,4 +70,7 @@ const HeaderBox = styled(Box)`
    padding-top: 5.5rem;
    padding-left: 2.5rem;
    width: 90%;
+   @media (max-width: 360px) {
+      margin: 0 -0.5rem;
+   }
 `;
