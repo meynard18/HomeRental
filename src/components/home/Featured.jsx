@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 import { theme } from '../../CustomTheme';
+import FeaturedCards from './FeaturedCards';
 
 const Featured = () => {
    return (
@@ -21,12 +22,14 @@ const Featured = () => {
                <Typography
                   variant="h3"
                   component="h3"
-                  sx={{ fontWeight: 600, fontSize: 42, mt: 1 }}
+                  sx={{ fontWeight: 600, fontSize: 40, mt: 1 }}
                >
                   Lorem Ipsum Homes
                </Typography>
             </HeaderBox>
+            <FeaturedCards />
          </StyledBox>
+         <GreyBackground maxWidth="xxl" sx={{ m: 'auto' }}></GreyBackground>
       </>
    );
 };
@@ -36,7 +39,13 @@ export default Featured;
 const StyledBox = styled(Box)`
    background-color: ${theme.palette.bg.main};
    margin-top: -1.25rem;
-   height: 100vh;
+   height: 60vh;
+`;
+
+const GreyBackground = styled(Box)`
+   background-color: ${theme.palette.grey[300]};
+   min-height: 50vh;
+   padding: 5rem 0;
 `;
 const FlexFeatured = styled(Box)`
    display: flex;
@@ -50,7 +59,7 @@ const Line = styled(Box)`
 
 const HeaderBox = styled(Box)`
    margin: auto;
-   padding-top: 4rem;
-   padding-left: 2rem;
+   padding-top: 5.5rem;
+   padding-left: 2.5rem;
    width: 90%;
 `;
