@@ -63,14 +63,14 @@ const FeaturedCards = () => {
       <>
          <Grid container sx={{ justifyContent: 'center', gap: 3, mt: 6 }}>
             {propertiesInformation.map((item, idx) => (
-               <Card sx={{ maxWidth: 345 }}>
+               <StyledCard sx={{ maxWidth: 345, borderRadius: 0 }}>
                   <CardMedia
                      component="img"
                      alt="green iguana"
-                     height="220"
+                     height="210"
                      image={item.image}
                   />
-                  <CardContent>
+                  <StyledCardContent>
                      <PriceBox sx={{ display: 'flex' }}>
                         <Typography
                            variant="body2"
@@ -96,31 +96,42 @@ const FeaturedCards = () => {
                      <Box
                         sx={{
                            display: 'flex',
-                           gap: 4,
-                           mt: 1,
+                           gap: 3,
+                           mt: 2,
                            justifyContent: 'center',
                         }}
                      >
                         <IconBox>
                            <Icon icon={item.beds} height="30" />
-                           <span>{item.numBed} Beds</span>
+                           <Typography
+                              sx={{
+                                 fontWeight: 500,
+                              }}
+                           >
+                              {item.numBed}
+                              Beds
+                           </Typography>
                         </IconBox>
                         <IconBox>
                            <Icon icon={item.baths} height="30" />
-                           <span>{item.numBath} Baths</span>
+                           <Typography sx={{ fontWeight: 500 }}>
+                              {item.numBath} Baths
+                           </Typography>
                         </IconBox>
                         <IconBox>
                            <Icon icon={item.size} height="30" />
-                           <>{item.numSize} sq.ft</>
+                           <Typography sx={{ fontWeight: 500 }}>
+                              {item.numSize} sq.ft
+                           </Typography>
                         </IconBox>
                      </Box>
-                  </CardContent>
+                  </StyledCardContent>
                   <CardActions>
-                     <Button size="medium" variant="contained">
+                     <StyledButton size="medium" variant="contained">
                         Schedule Viewing
-                     </Button>
+                     </StyledButton>
                   </CardActions>
-               </Card>
+               </StyledCard>
             ))}
          </Grid>
       </>
@@ -129,13 +140,43 @@ const FeaturedCards = () => {
 
 export default FeaturedCards;
 
+const StyledCard = styled(Card)`
+   @media (max-width: 360px) {
+      width: 90%;
+   }
+`;
+
+const StyledCardContent = styled(CardContent)`
+   @media (max-width: 360px) {
+      paddign: 1rem;
+      margin: auto;
+   }
+`;
 const PriceBox = styled(Box)`
    justify-content: center;
    align-items: center;
    margin-left: -3.5rem;
+   @media (max-width: 360px) {
+      margin-left: -2rem;
+   }
 `;
 
 const IconBox = styled(Box)`
    display: flex;
    align-items: center;
+   @media (max-width: 360px) {
+      margin: 0 -0.5rem;
+   }
+`;
+
+const StyledButton = styled(Button)`
+   border-radius: 0px;
+   width: 100%;
+   margin-top: -0.25rem;
+   margin-bottom: 0.5rem;
+
+   background-color: ${theme.palette.black[500]};
+   &:hover {
+      background-color: darkred;
+   }
 `;

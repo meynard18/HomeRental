@@ -62,14 +62,22 @@ export const theme = createTheme({
       h3: {
          fontSize: 28,
          '@media (max-width:992px)': {
+            fontSize: 26,
+         },
+         '@media (max-width:768px)': {
+            fontSize: 24,
+         },
+      },
+      h4: {
+         '@media (max-width:992px)': {
             fontSize: 22,
          },
          '@media (max-width:768px)': {
-            fontSize: 20,
+            fontSize: 18,
          },
       },
 
-      body1: { fontSize: 14 },
+      body1: { fontSize: 15 },
 
       button: {
          textTransform: 'none',

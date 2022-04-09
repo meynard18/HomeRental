@@ -1,5 +1,6 @@
 import React from 'react';
 import Featured from '../components/home/Featured';
+import ChooseUs from '../components/home/ChooseUs';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
 import {
@@ -77,6 +78,7 @@ const Home = () => {
             <Box></Box>
          </StyledBox>
          <Featured />
+         <ChooseUs />
       </>
    );
 };
