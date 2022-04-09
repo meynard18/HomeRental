@@ -36,15 +36,22 @@ const ChooseItems = () => {
                raised={false}
                sx={{ display: 'flex', p: 1.5, border: 0 }}
             >
-               <Icon icon={item.image} height="100" color="#D8C093" />
+               <Icon
+                  icon={item.image}
+                  style={{
+                     fontSize: 100,
+                     color: theme.palette.accentColor.main,
+                  }}
+               />
                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
                      <Typography
                         component="div"
-                        variant="h5"
+                        variant="h4"
                         sx={{
                            color: theme.palette.grey[700],
                            fontWeight: 500,
+                           fontSize: 26,
                         }}
                      >
                         {item.title}
@@ -65,4 +72,9 @@ export default ChooseItems;
 const StyledCard = styled(Card)`
    border-radius: 0px;
    box-shadow: none;
+   @media (max-width: 360px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
 `;

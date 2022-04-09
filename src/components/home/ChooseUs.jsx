@@ -80,17 +80,26 @@ const FlexContainer = styled(Box)`
    gap: 1rem;
    margin-top: 3.5rem;
    padding-bottom: 4rem;
+   @media (max-width: 992px) {
+      flex-direction: column;
+   }
 `;
 
 const ItemBox = styled(Box)`
    flex-basis: 1;
    background-color: lightblue;
    width: 35rem;
+   @media (max-width: 768px) {
+      width: 90%;
+   }
 `;
 
 const ImageBox = styled(Box)`
    width: 35rem;
    position: relative;
+   @media (max-width: 768px) {
+      width: 90%;
+   }
 
    &:before {
       content: '';
@@ -105,4 +114,7 @@ const ImageBox = styled(Box)`
 const StyledCardMedia = styled(CardMedia)`
    height: 28.5rem;
    object-fit: cover;
+   @media (max-width: 360px) {
+      height: 100%;
+   }
 `;

@@ -19,6 +19,7 @@ import {
 import { Image } from '@mui/icons-material';
 import SearchIcon from '@mui/icons-material/Search';
 import home from '../images/heroSection1.jpg';
+import Testimonials from '../components/home/Testimonials';
 
 const Home = () => {
    return (
@@ -79,6 +80,7 @@ const Home = () => {
          </StyledBox>
          <Featured />
          <ChooseUs />
+         <Testimonials />
       </>
    );
 };
@@ -108,7 +110,8 @@ const HeaderBox = styled(Box)`
    flex-direction: column;
    justify-content: center;
    margin-top: 2.5rem;
-   width: 70%;
+   // width: 70%;
+   width: 35rem;
    padding: 1rem;
    @media (max-width: 992px) {
       width: 100%;
@@ -146,10 +149,14 @@ const StyledButton = styled(Button)`
 `;
 
 const ImageContainer = styled(Box)`
-   padding: 1rem;
-   max-width: 56rem;
-   height: 100%;
+   width: 35rem;
    margin: auto;
+   @media (max-width: 992px) {
+      width: 90%;
+   }
+   @media (max-width: 480px) {
+      width: 100%;
+   }
 `;
 const StyledCardMedia = styled(CardMedia)`
    @media (max-width: 480px) {

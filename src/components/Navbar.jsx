@@ -114,7 +114,7 @@ function Navbar() {
 
 export default Navbar;
 const StyledAppBar = styled(AppBar)`
-   max-width: 1436px;
+   max-width: 1600px;
    margin: auto;
 `;
 const StyledToolbar = styled(Toolbar)`

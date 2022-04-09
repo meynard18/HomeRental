@@ -52,7 +52,7 @@ const StyledBox = styled(Box)`
       ${theme.palette.bg.main} 50%,
       ${theme.palette.grey[500]} 50%
    );
-   padding-bottom: 5rem;
+   padding-bottom: 6rem;
    margin-top: -1.25rem;
 `;
 const FlexFeatured = styled(Box)`
