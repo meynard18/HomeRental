@@ -12,7 +12,7 @@ const items = [
       image: 'bi:building',
       title: 'WIDE RANGE OF PROPERTIES',
       description:
-         'With a robust selection of popular properties on hand,as well as leading properties from experts.',
+         'With a robust selection of popular properties on hand, as well as leading properties from experts.',
    },
    {
       image: 'carbon:finance',
@@ -42,7 +42,10 @@ const ChooseItems = () => {
                      <Typography
                         component="div"
                         variant="h5"
-                        sx={{ color: theme.palette.grey[400], fontWeight: 500 }}
+                        sx={{
+                           color: theme.palette.grey[700],
+                           fontWeight: 500,
+                        }}
                      >
                         {item.title}
                      </Typography>
