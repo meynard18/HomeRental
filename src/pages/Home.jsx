@@ -3,23 +3,18 @@ import Featured from '../components/home/Featured';
 import ChooseUs from '../components/home/ChooseUs';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
+import SearchIcon from '@mui/icons-material/Search';
+import home from '../images/heroSection1.jpg';
+import Testimonials from '../components/home/Testimonials';
 import {
    Box,
    Typography,
    InputLabel,
-   MenuItem,
-   Select,
    Button,
-   Container,
    FormControl,
-   TextField,
    OutlinedInput,
    CardMedia,
 } from '@mui/material';
-import { Image } from '@mui/icons-material';
-import SearchIcon from '@mui/icons-material/Search';
-import home from '../images/heroSection1.jpg';
-import Testimonials from '../components/home/Testimonials';
 
 const Home = () => {
    return (

@@ -1,64 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DrawerComponent from './DrawerComponent';
+import { theme } from '../CustomTheme';
+import styled from '@emotion/styled';
 import {
    Toolbar,
    CssBaseline,
    AppBar,
    Typography,
-   Box,
-   Container,
+   useMediaQuery,
+   createTheme,
+   useScrollTrigger,
 } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme } from '@mui/material/styles';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import DrawerComponent from './DrawerComponent';
-import { theme } from '../CustomTheme';
-import styled from '@emotion/styled';
-
-// const useStyles = makeStyles((theme) => ({
-//    navContainer: {
-//       backgroundColor: 'red',
-//    },
-//    navbar: {
-//       width: '90%',
-//       margin: 'auto',
-//    },
-
-//    logo: {
-//       textDecoration: 'none',
-//       marginRight: 'auto',
-//       color: theme.palette.textColor.main,
-//    },
-//    contact: {
-//       backgroundColor: 'inherit',
-//       color: theme.palette.textColor.main,
-//       textDecoration: 'none',
-//       fontSize: 15,
-//       padding: '.25rem .55rem',
-//       borderRadius: '.25rem',
-//       border: `1px solid ${theme.palette.textColor.main}`,
-//       marginLeft: '.5rem',
-//       cursor: 'pointer',
-//       fontFamily: 'Poppins',
-
-//       '&:hover': {
-//          color: theme.palette.textColor.accent,
-//          border: `1px solid ${theme.palette.textColor.accent}`,
-//       },
-//    },
-
-//    link: {
-//       cursor: 'pointer',
-//       fontSize: 16,
-//       flexWrap: 'none',
-//       color: theme.palette.textColor.main,
-//       textDecoration: 'none',
-//       padding: '0 .75rem',
-//       '&:hover': {
-//          color: theme.palette.textColor.accent,
-//       },
-//    },
-// }));
 
 function ElevationScroll(props) {
    const { children, window } = props;
@@ -70,10 +23,7 @@ function ElevationScroll(props) {
 
    return React.cloneElement(children, {
       style: {
-         backgroundColor: trigger
-            ? `white`
-            : // ? `${theme.palette.grey[600]}`
-              'transparent',
+         backgroundColor: trigger ? `white` : 'transparent',
       },
    });
 }

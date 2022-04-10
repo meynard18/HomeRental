@@ -1,10 +1,9 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 import { theme } from '../../CustomTheme';
 import ChooseItems from './ChooseItems';
 import image from '../../images/chooseus.jpg';
-import { CardMedia } from '@mui/material';
+import React from 'react';
+import { Box, Typography, CardMedia } from '@mui/material';
 
 const ChooseUs = () => {
    return (
@@ -52,6 +51,7 @@ export default ChooseUs;
 const StyledBox = styled(Box)`
    background-color: ${theme.palette.bg.main};
    margin-top: -1.25rem;
+   padding-bottom: 1rem;
 `;
 const Line = styled(Box)`
    width: 2.75rem;
@@ -86,8 +86,6 @@ const FlexContainer = styled(Box)`
 `;
 
 const ItemBox = styled(Box)`
-   flex-basis: 1;
-   background-color: lightblue;
    width: 35rem;
    @media (max-width: 768px) {
       width: 90%;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 import { theme } from '../../CustomTheme';
 import FeaturedCards from './FeaturedCards';
+import { Box, Typography } from '@mui/material';
 
 const Featured = () => {
    return (

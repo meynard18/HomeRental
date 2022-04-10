@@ -1,11 +1,8 @@
 import React from 'react';
 import { theme } from '../../CustomTheme';
 import { Icon } from '@iconify/react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
+import { Box, Card, CardContent, Typography } from '@mui/material';
 
 const items = [
    {
