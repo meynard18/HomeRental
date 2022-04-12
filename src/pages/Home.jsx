@@ -1,11 +1,12 @@
 import React from 'react';
 import Featured from '../components/home/Featured';
 import ChooseUs from '../components/home/ChooseUs';
+import Testimonials from '../components/home/Testimonials';
+import Footer from '../components/home/Footer';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
 import SearchIcon from '@mui/icons-material/Search';
 import home from '../images/heroSection1.jpg';
-import Testimonials from '../components/home/Testimonials';
 import {
    Box,
    Typography,
@@ -76,6 +77,7 @@ const Home = () => {
          <Featured />
          <ChooseUs />
          <Testimonials />
+         <Footer />
       </>
    );
 };
