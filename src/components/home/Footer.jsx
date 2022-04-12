@@ -214,6 +214,7 @@ const StyledLink = styled(Link)`
    text-decoration: none;
    color: ${theme.palette.black[600]};
    margin: 0.175rem 0;
+   font-weight: 500;
 `;
 
 const FlexContact = styled(Box)`

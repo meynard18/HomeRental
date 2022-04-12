@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
    Box,
    InputLabel,
@@ -13,19 +14,27 @@ import { theme } from '../../CustomTheme';
 
 const SearchBox = () => {
    return (
-      <Box>
-         <BoxContainer>
-            <form>
+      <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
+         <SearchContainer>
+            <StyledFormContainer>
                <StyledFormControl>
                   <InputLabel htmlFor="City">Location</InputLabel>
-                  <Select label="Location">
+                  <Select
+                     label="Location"
+                     variant="outlined"
+                     sx={{ borderRadius: 0 }}
+                  >
                      <MenuItem>San Diego</MenuItem>
                      <MenuItem>LA</MenuItem>
                   </Select>
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Bedroom">Bedroom</InputLabel>
-                  <Select label="Beds">
+                  <Select
+                     label="Beds"
+                     variant="outlined"
+                     sx={{ borderRadius: 0 }}
+                  >
                      <MenuItem value="any">Any</MenuItem>
                      <MenuItem>1 Bedroom</MenuItem>
                      <MenuItem>2 Bedroom</MenuItem>
@@ -35,7 +44,11 @@ const SearchBox = () => {
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Bathroom">Bathroom</InputLabel>
-                  <Select label="Beds">
+                  <Select
+                     label="Beds"
+                     variant="outlined"
+                     sx={{ borderRadius: 0 }}
+                  >
                      <MenuItem value="any">Any</MenuItem>
                      <MenuItem>1 Bathroom</MenuItem>
                      <MenuItem>2 Bathroom</MenuItem>
@@ -45,7 +58,11 @@ const SearchBox = () => {
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Price">Price</InputLabel>
-                  <Select label="Price">
+                  <Select
+                     label="Price"
+                     variant="outlined"
+                     sx={{ borderRadius: 0 }}
+                  >
                      <MenuItem value="any">Any</MenuItem>
                      <MenuItem>$0-$999</MenuItem>
                      <MenuItem>$1000-$1999</MenuItem>
@@ -55,18 +72,22 @@ const SearchBox = () => {
                   </Select>
                </StyledFormControl>
                <StyledButton>Show Result</StyledButton>
-            </form>
-         </BoxContainer>
-      </Box>
+            </StyledFormContainer>
+         </SearchContainer>
+      </MainContainer>
    );
 };
 
 export default SearchBox;
-const BoxContainer = styled(Box)`
+const MainContainer = styled(Box)`
+   background-color: ${theme.palette.bg.main};
+   padding-top: 4rem;
+`;
+const SearchContainer = styled(Box)`
    background-color: ${theme.palette.grey[500]};
-   width: 80%;
-   height: 6rem;
+   width: 85%;
    margin: auto;
+   padding: 1.5rem 0;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -74,13 +95,22 @@ const BoxContainer = styled(Box)`
 
 const StyledFormControl = styled(FormControl)`
    background-color: white;
+   width: 100%;
+   margin: auto 0.75rem;
 `;
 
 const StyledButton = styled(Button)`
-   background-color: ${theme.palette.black[500]};
    border-radius: 0px;
+   width: 100%;
+
+   background-color: ${theme.palette.black[500]};
    color: white;
-   &:hover: {
-      background-color: ;
+   &:hover {
+      background-color: darkred;
    }
+`;
+
+const StyledFormContainer = styled.form`
+   display: flex;
+   width: 90%;
 `;

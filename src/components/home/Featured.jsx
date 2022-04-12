@@ -36,7 +36,6 @@ const Featured = () => {
 export default Featured;
 
 const StyledBox = styled(Box)`
-   // background-color: ${theme.palette.bg.main};
    background: -moz-linear-gradient(
       top,
       ${theme.palette.bg.main} 50%,
