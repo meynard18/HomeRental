@@ -1,5 +1,7 @@
-import React from 'react';
-
+import React, { useContext, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { theme } from '../../CustomTheme';
+import { PropertyContext } from './PropertiesContext';
 import {
    Box,
    InputLabel,
@@ -9,23 +11,69 @@ import {
    MenuItem,
    Button,
 } from '@mui/material';
-import styled from '@emotion/styled';
-import { theme } from '../../CustomTheme';
+
+const location = [
+   'Any',
+   'Pasadena',
+   'Los Angeles',
+   'San Diego',
+   'Anaheim',
+   'Orange County',
+];
 
 const SearchBox = () => {
+   const { data, setData, searchProperty, setSearchProperty } =
+      useContext(PropertyContext);
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      filterLocation();
+   };
+
+   const handleLocation = (e) => {
+      console.log(e.target.value);
+      setSearchProperty({ ...searchProperty, location: e.target.value });
+   };
+
+   const filterLocation = () => {
+      setData({
+         ...data,
+         filtered: data.main.filter((item) =>
+            item.city
+               .toLowerCase()
+               .includes(searchProperty.location.toLowerCase())
+         ),
+      });
+      if (searchProperty.location === 'Any') {
+         console.log('any is here');
+         setData({
+            ...data,
+            filtered: data.main.filter(
+               (item) => item.city !== searchProperty.location
+            ),
+         });
+      }
+   };
+   useEffect(() => {}, [data]);
+
    return (
       <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
          <SearchContainer>
-            <StyledFormContainer>
+            <StyledFormContainer onSubmit={handleSubmit}>
                <StyledFormControl>
                   <InputLabel htmlFor="City">Location</InputLabel>
                   <Select
                      label="Location"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
+                     onChange={handleLocation}
+                     value={searchProperty.location}
                   >
-                     <MenuItem>San Diego</MenuItem>
-                     <MenuItem>LA</MenuItem>
+                     {location.map((item, idx) => (
+                        <MenuItem key={idx} value={item}>
+                           {item}
+                        </MenuItem>
+                     ))}
                   </Select>
                </StyledFormControl>
                <StyledFormControl>
@@ -71,7 +119,7 @@ const SearchBox = () => {
                      <MenuItem>$4000+</MenuItem>
                   </Select>
                </StyledFormControl>
-               <StyledButton>Show Result</StyledButton>
+               <StyledButton type="submit">Show Result</StyledButton>
             </StyledFormContainer>
          </SearchContainer>
       </MainContainer>

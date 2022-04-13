@@ -1,39 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import styled from '@emotion/styled';
 import { theme } from '../CustomTheme';
 import { Box } from '@mui/material';
 import SearchBox from '../components/properties/SearchBox';
 import SearchResult from '../components/properties/SearchResult';
 import { PropertyContext } from '../components/properties/PropertiesContext';
+import { rental } from '../data/rentalProperties';
+import { useGlobalDataContext } from '../App';
 
 const Properties = () => {
-   const [data, setData] = useState([]);
+   const { location, bedrooms, bathrooms, price } = useGlobalDataContext();
+   const [searchProperty, setSearchProperty] = useState({
+      location: location,
+      bedrooms: bedrooms,
+      bathrooms: bathrooms,
+      price: price,
+   });
+   const [data, setData] = useState({
+      main: rental,
+      filtered: rental,
+   });
 
    const searchProperties = {
       data,
       setData, // imported to SearchBox
+      searchProperty,
+      setSearchProperty,
    };
-
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const result = await axios(
-               `https://my.api.mockaroo.com/california_rentals.json?key=d88c3670`
-            );
-            setData(result.data);
-         } catch (error) {
-            console.log(error);
-         }
-      };
-      fetchData();
-   }, []);
 
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
-            <MainContainer>
-               {console.log(data)}
+            <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
                <SearchBox />
                <h1>Property Page</h1>
                <SearchResult />
