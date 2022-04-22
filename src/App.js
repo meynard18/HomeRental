@@ -16,8 +16,16 @@ function App() {
    const [bedrooms, setBedrooms] = useState('Any');
    const [bathrooms, setBathrooms] = useState('Any');
    const [price, setPrice] = useState('Any');
+   const [pageName, setPageName] = useState('rental');
 
-   const global = { location, bedrooms, bathrooms, price };
+   const global = {
+      location,
+      bedrooms,
+      bathrooms,
+      price,
+      pageName,
+      setPageName,
+   };
    return (
       <ThemeProvider theme={theme}>
          <GlobalData.Provider value={global}>

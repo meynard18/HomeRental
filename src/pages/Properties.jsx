@@ -4,6 +4,7 @@ import { theme } from '../CustomTheme';
 import { Box } from '@mui/material';
 import SearchBox from '../components/properties/SearchBox';
 import SearchResult from '../components/properties/SearchResult';
+import Pagination from '../components/properties/Pagination';
 import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import { useGlobalDataContext } from '../App';
@@ -16,16 +17,21 @@ const Properties = () => {
       bathrooms: bathrooms,
       price: price,
    });
+
    const [data, setData] = useState({
       main: rental,
       filtered: rental,
    });
+
+   const [range, setRange] = useState({ start: 0, end: 9 });
 
    const searchProperties = {
       data,
       setData, // imported to SearchBox
       searchProperty,
       setSearchProperty,
+      range,
+      setRange,
    };
 
    return (
@@ -35,6 +41,7 @@ const Properties = () => {
                <SearchBox />
                <h1>Property Page</h1>
                <SearchResult />
+               <Pagination />
             </MainContainer>
          </PropertyContext.Provider>
       </>

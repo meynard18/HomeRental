@@ -14,11 +14,27 @@ import {
    Button,
 } from '@mui/material';
 
+const city = [
+   'Any',
+   'Pasadena',
+   'Los Angles',
+   'San Diego',
+   'Anaheim',
+   'Orange',
+];
+
 const SearchResult = () => {
-   const { data, setData } = useContext(PropertyContext);
+   const { data, setData, range } = useContext(PropertyContext);
    return (
       <Grid container sx={{ justifyContent: 'center', gap: 3, mt: 6 }}>
          {data.filtered.map((item, idx) => (
+            // {data.filtered
+            //    .filter(
+            //       (item) =>
+            //          data.filtered.indexOf(item) >= range.start &&
+            //          data.filtered.indexOf(item) <= range.end
+            //    )
+            //    .map((item, idx) => (
             <Box key={idx}>
                <Card sx={{ maxWidth: 385 }}>
                   <CardActionArea>
