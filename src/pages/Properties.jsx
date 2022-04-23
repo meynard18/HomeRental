@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../CustomTheme';
 import { Box } from '@mui/material';
@@ -9,7 +9,33 @@ import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import { useGlobalDataContext } from '../App';
 
+const propertyReducer = (state, action) => {
+   switch (action.type) {
+      case 'SET_PROPERTY':
+         return { ...state, property: { main: rental, filtered: rental } };
+      case 'SET_LOCATION':
+         return { ...state, location: action.payload };
+      case 'SET_BEDROOM':
+         return { ...state, bedroom: action.payload };
+      case 'SET_BATHROOM':
+         return { ...state, bathroom: action.payload };
+      case 'SET_PRICE':
+         return { ...state, price: action.payload };
+
+      default:
+         throw new Error('No action');
+   }
+};
+
 const Properties = () => {
+   const [state, dispatch] = useReducer(propertyReducer, {
+      property: { main: rental, filtered: rental },
+      location: 'Any',
+      bathroom: 'Any',
+      bedroom: 'Any',
+      price: 'Any',
+   });
+
    const { location, bedrooms, bathrooms, price } = useGlobalDataContext();
    const [searchProperty, setSearchProperty] = useState({
       location: location,
@@ -32,8 +58,21 @@ const Properties = () => {
       setSearchProperty,
       range,
       setRange,
+      state,
+      dispatch,
    };
 
+   useEffect(() => {
+      fetch('../data/rentalProperties')
+         .then((res) => res.text())
+         .then((data) =>
+            dispatch({
+               type: 'SET_PROPERTY',
+               payload: data,
+            })
+         );
+   }, []);
+   console.log(state.property);
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
