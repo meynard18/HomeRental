@@ -24,10 +24,15 @@ const city = [
 ];
 
 const SearchResult = () => {
-   const { data, setData, range } = useContext(PropertyContext);
+   const {
+      state: { property },
+      data,
+      setData,
+      range,
+   } = useContext(PropertyContext);
    return (
       <Grid container sx={{ justifyContent: 'center', gap: 3, mt: 6 }}>
-         {data.filtered.map((item, idx) => (
+         {property.filtered.map((item, idx) => (
             // {data.filtered
             //    .filter(
             //       (item) =>

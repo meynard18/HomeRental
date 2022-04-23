@@ -44,16 +44,9 @@ const Properties = () => {
       price: price,
    });
 
-   const [data, setData] = useState({
-      main: rental,
-      filtered: rental,
-   });
-
    const [range, setRange] = useState({ start: 0, end: 9 });
 
    const searchProperties = {
-      data,
-      setData, // imported to SearchBox
       searchProperty,
       setSearchProperty,
       range,
@@ -72,7 +65,7 @@ const Properties = () => {
             })
          );
    }, []);
-   console.log(state.property.filtered);
+
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
