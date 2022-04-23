@@ -12,7 +12,7 @@ import {
    Button,
 } from '@mui/material';
 
-const location = [
+const locations = [
    'Any',
    'Pasadena',
    'Los Angeles',
@@ -22,8 +22,13 @@ const location = [
 ];
 
 const SearchBox = () => {
-   const { data, setData, searchProperty, setSearchProperty } =
-      useContext(PropertyContext);
+   const {
+      state: { location },
+      data,
+      setData,
+      searchProperty,
+      setSearchProperty,
+   } = useContext(PropertyContext);
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -69,7 +74,7 @@ const SearchBox = () => {
                      onChange={handleLocation}
                      value={searchProperty.location}
                   >
-                     {location.map((item, idx) => (
+                     {locations.map((item, idx) => (
                         <MenuItem key={idx} value={item}>
                            {item}
                         </MenuItem>
