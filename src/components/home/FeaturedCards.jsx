@@ -63,7 +63,7 @@ const FeaturedCards = () => {
       <>
          <Grid container sx={{ justifyContent: 'center', gap: 3, mt: 6 }}>
             {propertiesInformation.map((item, idx) => (
-               <StyledCard sx={{ maxWidth: 345, borderRadius: 0 }}>
+               <StyledCard sx={{ maxWidth: 345, borderRadius: 0 }} key={idx}>
                   <CardMedia
                      component="img"
                      alt="green iguana"

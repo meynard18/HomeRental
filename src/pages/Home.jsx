@@ -30,18 +30,14 @@ const Home = () => {
                   >
                      Let's Find Your New Home Today
                   </Typography>
-                  <Typography
-                     variant="h3"
-                     component="subtitle1"
-                     sx={{ mb: 2.5 }}
-                  >
+                  <Typography variant="h3" component="div" sx={{ mb: 2.5 }}>
                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
                      Suscipit, quidem?
                   </Typography>
                   <FormContainer>
                      <FormControl fullWidth>
                         <InputLabel
-                           htmlfor="location"
+                           htmlFor="location"
                            placeholder="location"
                            sx={{ fontSize: 18 }}
                         >

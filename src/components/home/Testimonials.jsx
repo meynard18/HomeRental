@@ -61,7 +61,7 @@ const Testimonials = () => {
             <StyledContainer>
                <Slider {...settings}>
                   {items.map((item, idx) => (
-                     <TestimonialBox>
+                     <TestimonialBox key={idx}>
                         <ImageBox>
                            <ImageContainer
                               src={item.image}

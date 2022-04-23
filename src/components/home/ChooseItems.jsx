@@ -30,6 +30,7 @@ const ChooseItems = () => {
       <>
          {items.map((item, idx) => (
             <StyledCard
+               key={idx}
                raised={false}
                sx={{ display: 'flex', p: 1.5, border: 0 }}
             >

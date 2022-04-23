@@ -72,7 +72,7 @@ const Properties = () => {
             })
          );
    }, []);
-   console.log(state.property);
+   console.log(state.property.filtered);
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
