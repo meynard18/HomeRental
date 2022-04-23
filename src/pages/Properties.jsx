@@ -35,20 +35,11 @@ const Properties = () => {
       bedroom: 'Any',
       price: 'Any',
    });
-
-   const { location, bedrooms, bathrooms, price } = useGlobalDataContext();
-   const [searchProperty, setSearchProperty] = useState({
-      location: location,
-      bedrooms: bedrooms,
-      bathrooms: bathrooms,
-      price: price,
-   });
-
    const [range, setRange] = useState({ start: 0, end: 9 });
 
+   // const { location, bedrooms, bathrooms, price } = useGlobalDataContext();
+
    const searchProperties = {
-      searchProperty,
-      setSearchProperty,
       range,
       setRange,
       state,

@@ -12,20 +12,6 @@ const GlobalData = React.createContext();
 export const useGlobalDataContext = () => useContext(GlobalData);
 
 function App() {
-   const [location, setLocation] = useState('Any');
-   const [bedrooms, setBedrooms] = useState('Any');
-   const [bathrooms, setBathrooms] = useState('Any');
-   const [price, setPrice] = useState('Any');
-   const [pageName, setPageName] = useState('rental');
-
-   const global = {
-      location,
-      bedrooms,
-      bathrooms,
-      price,
-      pageName,
-      setPageName,
-   };
    return (
       <ThemeProvider theme={theme}>
          <GlobalData.Provider value={global}>

@@ -23,11 +23,8 @@ const locations = [
 
 const SearchBox = () => {
    const {
-      state: { location },
-      data,
-      setData,
-      searchProperty,
-      setSearchProperty,
+      state: { location, property },
+      dispatch,
    } = useContext(PropertyContext);
 
    const handleSubmit = (e) => {
@@ -37,29 +34,41 @@ const SearchBox = () => {
 
    const handleLocation = (e) => {
       console.log(e.target.value);
-      setSearchProperty({ ...searchProperty, location: e.target.value });
+      dispatch({
+         type: 'SET_LOCATION',
+         payload: e.target.value,
+      });
    };
 
    const filterLocation = () => {
-      setData({
-         ...data,
-         filtered: data.main.filter((item) =>
-            item.city
-               .toLowerCase()
-               .includes(searchProperty.location.toLowerCase())
-         ),
-      });
-      if (searchProperty.location === 'Any') {
-         console.log('any is here');
-         setData({
-            ...data,
-            filtered: data.main.filter(
-               (item) => item.city !== searchProperty.location
-            ),
-         });
-      }
+      console.log('needs to filter');
+      property.filtered.filter((item) =>
+         item.city.toLowerCase().includes(location.toLowerCase())
+      );
+      console.log(
+         property.filtered.filter((item) =>
+            item.city.toLowerCase().includes(location.toLowerCase())
+         )
+      );
+      // setData({
+      //    ...data,
+      //    filtered: data.main.filter((item) =>
+      //       item.city
+      //          .toLowerCase()
+      //          .includes(searchProperty.location.toLowerCase())
+      //    ),
+      // });
+      // if (searchProperty.location === 'Any') {
+      //    console.log('any is here');
+      //    setData({
+      //       ...data,
+      //       filtered: data.main.filter(
+      //          (item) => item.city !== searchProperty.location
+      //       ),
+      //    });
+      // }
    };
-   useEffect(() => {}, [data]);
+   useEffect(() => {}, [property]);
 
    return (
       <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
@@ -72,7 +81,7 @@ const SearchBox = () => {
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
                      onChange={handleLocation}
-                     value={searchProperty.location}
+                     value={location}
                   >
                      {locations.map((item, idx) => (
                         <MenuItem key={idx} value={item}>
