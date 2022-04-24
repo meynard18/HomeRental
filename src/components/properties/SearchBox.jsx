@@ -35,7 +35,6 @@ const SearchBox = () => {
    };
 
    const handleLocation = (e) => {
-      console.log(e.target.value);
       dispatch({
          type: 'SET_LOCATION',
          payload: e.target.value,

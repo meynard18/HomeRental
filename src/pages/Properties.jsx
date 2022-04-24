@@ -9,14 +9,16 @@ import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import { useGlobalDataContext } from '../App';
 
-const propertyReducer = (state, action) => {
-   const filteredProperty = (property, location) => {
+const filteredProperty = (property, location) => {
+   if (location.toLowerCase() === 'any') {
+      return property;
+   } else {
       return property.filter(
-         (item) => item.city.toLowerCase().includes(location),
-         console.log('i want to filter stuff')
+         (item) => item.city.toLowerCase() === location.toLowerCase()
       );
-      // console.log(state.propertyFiltered);
-   };
+   }
+};
+const propertyReducer = (state, action) => {
    switch (action.type) {
       case 'SET_PROPERTY':
          console.log('hi');
@@ -29,7 +31,6 @@ const propertyReducer = (state, action) => {
          return {
             ...state,
             location: action.payload,
-            // propertyFiltered: filteredProperty(state.propertyFiltered),
          };
       case 'SET_BEDROOM':
          return { ...state, bedroom: action.payload };
@@ -40,6 +41,7 @@ const propertyReducer = (state, action) => {
       case 'SET_FILTERS':
          console.log('hiiiiii');
          console.log(state.location);
+         console.log(state.propertyFiltered);
          return {
             ...state,
             filters: action.payload,
@@ -64,8 +66,6 @@ const Properties = () => {
    });
    const [range, setRange] = useState({ start: 0, end: 9 });
 
-   // const { location, bedrooms, bathrooms, price } = useGlobalDataContext();
-
    const searchProperties = {
       range,
       setRange,
@@ -73,17 +73,9 @@ const Properties = () => {
       dispatch,
    };
 
-   // useEffect(() => {
-   //    fetch('../data/rentalProperties')
-   //       .then((res) => res.text())
-   //       .then((payload) =>
-   //          dispatch({
-   //             type: 'SET_PROPERTY',
-   //             payload,
-   //          })
-   //       );
-   // }, []);
-   useEffect(() => {}, [state.property, state.propertyFiltered]);
+   useEffect(() => {
+      console.log('useEffect for propertyFiltered');
+   }, [state.location]);
 
    return (
       <>
