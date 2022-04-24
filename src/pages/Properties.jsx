@@ -10,18 +10,34 @@ import { rental } from '../data/rentalProperties';
 import { useGlobalDataContext } from '../App';
 
 const propertyReducer = (state, action) => {
+   const filteredProperty = (property, location) => {
+      return property.filter(
+         (item) => item.city.toLowerCase().includes('los angeles'),
+         console.log('i want to filter stuff')
+      );
+      // console.log(state.propertyFiltered);
+   };
    switch (action.type) {
       case 'SET_PROPERTY':
-         return { ...state, property: { main: rental, filtered: rental } };
+         console.log('hi');
+         return {
+            ...state,
+            property: action.payload,
+         };
+
       case 'SET_LOCATION':
-         return { ...state, location: action.payload };
+         console.log(state.location);
+         return {
+            ...state,
+            location: action.payload,
+            propertyFiltered: filteredProperty(state.propertyFiltered),
+         };
       case 'SET_BEDROOM':
          return { ...state, bedroom: action.payload };
       case 'SET_BATHROOM':
          return { ...state, bathroom: action.payload };
       case 'SET_PRICE':
          return { ...state, price: action.payload };
-
       default:
          throw new Error('No action');
    }
@@ -29,7 +45,8 @@ const propertyReducer = (state, action) => {
 
 const Properties = () => {
    const [state, dispatch] = useReducer(propertyReducer, {
-      property: { main: rental, filtered: rental },
+      property: rental,
+      propertyFiltered: rental,
       location: 'Any',
       bathroom: 'Any',
       bedroom: 'Any',
@@ -46,16 +63,17 @@ const Properties = () => {
       dispatch,
    };
 
-   useEffect(() => {
-      fetch('../data/rentalProperties')
-         .then((res) => res.text())
-         .then((data) =>
-            dispatch({
-               type: 'SET_PROPERTY',
-               payload: data,
-            })
-         );
-   }, []);
+   // useEffect(() => {
+   //    fetch('../data/rentalProperties')
+   //       .then((res) => res.text())
+   //       .then((payload) =>
+   //          dispatch({
+   //             type: 'SET_PROPERTY',
+   //             payload,
+   //          })
+   //       );
+   // }, []);
+   useEffect(() => {}, [state.property, state.propertyFiltered]);
 
    return (
       <>

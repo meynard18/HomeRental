@@ -29,7 +29,9 @@ const SearchBox = () => {
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      filterLocation();
+      dispatch({
+         type: '',
+      });
    };
 
    const handleLocation = (e) => {
@@ -42,31 +44,6 @@ const SearchBox = () => {
 
    const filterLocation = () => {
       console.log('needs to filter');
-      property.filtered.filter((item) =>
-         item.city.toLowerCase().includes(location.toLowerCase())
-      );
-      console.log(
-         property.filtered.filter((item) =>
-            item.city.toLowerCase().includes(location.toLowerCase())
-         )
-      );
-      // setData({
-      //    ...data,
-      //    filtered: data.main.filter((item) =>
-      //       item.city
-      //          .toLowerCase()
-      //          .includes(searchProperty.location.toLowerCase())
-      //    ),
-      // });
-      // if (searchProperty.location === 'Any') {
-      //    console.log('any is here');
-      //    setData({
-      //       ...data,
-      //       filtered: data.main.filter(
-      //          (item) => item.city !== searchProperty.location
-      //       ),
-      //    });
-      // }
    };
    useEffect(() => {}, [property]);
 
