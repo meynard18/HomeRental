@@ -12,7 +12,7 @@ import { useGlobalDataContext } from '../App';
 const propertyReducer = (state, action) => {
    const filteredProperty = (property, location) => {
       return property.filter(
-         (item) => item.city.toLowerCase().includes('los angeles'),
+         (item) => item.city.toLowerCase().includes(location),
          console.log('i want to filter stuff')
       );
       // console.log(state.propertyFiltered);
@@ -26,11 +26,10 @@ const propertyReducer = (state, action) => {
          };
 
       case 'SET_LOCATION':
-         console.log(state.location);
          return {
             ...state,
             location: action.payload,
-            propertyFiltered: filteredProperty(state.propertyFiltered),
+            // propertyFiltered: filteredProperty(state.propertyFiltered),
          };
       case 'SET_BEDROOM':
          return { ...state, bedroom: action.payload };
@@ -38,6 +37,17 @@ const propertyReducer = (state, action) => {
          return { ...state, bathroom: action.payload };
       case 'SET_PRICE':
          return { ...state, price: action.payload };
+      case 'SET_FILTERS':
+         console.log('hiiiiii');
+         console.log(state.location);
+         return {
+            ...state,
+            filters: action.payload,
+            propertyFiltered: filteredProperty(
+               state.propertyFiltered,
+               state.location
+            ),
+         };
       default:
          throw new Error('No action');
    }

@@ -28,9 +28,9 @@ const SearchBox = () => {
    } = useContext(PropertyContext);
 
    const handleSubmit = (e) => {
-      e.preventDefault();
       dispatch({
-         type: '',
+         type: 'SET_FILTERS',
+         payload: e.preventDefault(),
       });
    };
 
