@@ -23,7 +23,7 @@ const locations = [
 
 const SearchBox = () => {
    const {
-      state: { location, property, bedroom },
+      state: { location, property, bedroom, bathroom },
       dispatch,
    } = useContext(PropertyContext);
 
@@ -44,6 +44,12 @@ const SearchBox = () => {
    const handleBedroom = (e) => {
       dispatch({
          type: 'SET_BEDROOM',
+         payload: e.target.value,
+      });
+   };
+   const handleBathroom = (e) => {
+      dispatch({
+         type: 'SET_BATHROOM',
          payload: e.target.value,
       });
    };
@@ -91,12 +97,14 @@ const SearchBox = () => {
                      label="Beds"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
+                     onChange={handleBathroom}
+                     value={bathroom}
                   >
-                     <MenuItem value="any">Any</MenuItem>
-                     <MenuItem>1 Bathroom</MenuItem>
-                     <MenuItem>2 Bathroom</MenuItem>
-                     <MenuItem>3 Bathroom</MenuItem>
-                     <MenuItem></MenuItem>
+                     <MenuItem value="Any">Any</MenuItem>
+                     <MenuItem value={1}>1 Bathroom</MenuItem>
+                     <MenuItem value={2}>2 Bathrooms</MenuItem>
+                     <MenuItem value={3}>3 Bathrooms</MenuItem>
+                     <MenuItem value={4}>4 Bathrooms</MenuItem>
                   </Select>
                </StyledFormControl>
                <StyledFormControl>

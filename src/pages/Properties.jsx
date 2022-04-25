@@ -83,6 +83,7 @@ const propertyReducer = (state, action) => {
          console.log(state.bedroom);
          return { ...state, bedroom: action.payload };
       case 'SET_BATHROOM':
+         console.log(state.bathroom);
          return { ...state, bathroom: action.payload };
       case 'SET_PRICE':
          return { ...state, price: action.payload };
