@@ -9,6 +9,11 @@ import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import { useGlobalDataContext } from '../App';
 
+/* first filter works, second DOES not work
+--- need to reset the properties to initial value everytime filter changes
+
+*/
+
 const filteredProperty = (property, location) => {
    if (location.toLowerCase() === 'any') {
       return property;
@@ -17,14 +22,18 @@ const filteredProperty = (property, location) => {
          (item) => item.city.toLowerCase() === location.toLowerCase()
       );
    }
+   if (location === '') {
+      return property;
+   }
 };
 const propertyReducer = (state, action) => {
    switch (action.type) {
       case 'SET_PROPERTY':
-         console.log('hi');
+         console.log('need to set propertyfiltered to initial value');
          return {
             ...state,
             property: action.payload,
+            propertyFiltered: action.payload,
          };
 
       case 'SET_LOCATION':
@@ -39,16 +48,10 @@ const propertyReducer = (state, action) => {
       case 'SET_PRICE':
          return { ...state, price: action.payload };
       case 'SET_FILTERS':
-         console.log('hiiiiii');
-         console.log(state.location);
-         console.log(state.propertyFiltered);
          return {
             ...state,
             filters: action.payload,
-            propertyFiltered: filteredProperty(
-               state.propertyFiltered,
-               state.location
-            ),
+            propertyFiltered: filteredProperty(state.property, state.location),
          };
       default:
          throw new Error('No action');
@@ -73,9 +76,20 @@ const Properties = () => {
       dispatch,
    };
 
+   // useEffect(() => {
+   //    fetch('../data/rentalProperties')
+   //       .then((res) => res.text())
+   //       .then((payload) =>
+   //          dispatch({
+   //             type: 'SET_PROPERTY',
+   //             payload,
+   //          })
+   //       );
+   // }, []);
+
    useEffect(() => {
-      console.log('useEffect for propertyFiltered');
-   }, [state.location]);
+      console.log('filters');
+   }, [state.propertyFiltered]);
 
    return (
       <>
