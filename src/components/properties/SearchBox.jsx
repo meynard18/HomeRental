@@ -23,7 +23,7 @@ const locations = [
 
 const SearchBox = () => {
    const {
-      state: { location, property },
+      state: { location, property, bedroom },
       dispatch,
    } = useContext(PropertyContext);
 
@@ -41,8 +41,11 @@ const SearchBox = () => {
       });
    };
 
-   const filterLocation = () => {
-      console.log('needs to filter');
+   const handleBedroom = (e) => {
+      dispatch({
+         type: 'SET_BEDROOM',
+         payload: e.target.value,
+      });
    };
    useEffect(() => {}, [property]);
 
@@ -72,12 +75,14 @@ const SearchBox = () => {
                      label="Beds"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
+                     onChange={handleBedroom}
+                     value={bedroom}
                   >
-                     <MenuItem value="any">Any</MenuItem>
-                     <MenuItem>1 Bedroom</MenuItem>
-                     <MenuItem>2 Bedroom</MenuItem>
-                     <MenuItem>3 Bedroom</MenuItem>
-                     <MenuItem>4 Bedroom</MenuItem>
+                     <MenuItem value="Any">Any</MenuItem>
+                     <MenuItem value={1}>1 Bedroom</MenuItem>
+                     <MenuItem value={2}>2 Bedrooms</MenuItem>
+                     <MenuItem value={3}>3 Bedrooms</MenuItem>
+                     <MenuItem value={4}>4 Bedrooms</MenuItem>
                   </Select>
                </StyledFormControl>
                <StyledFormControl>
