@@ -14,25 +14,55 @@ import { useGlobalDataContext } from '../App';
 
 */
 
-/* all filters are ANY*/
-/* some filters are selected while some are any */
-/* all filters are selected */
+// all filters **
+// no filters **
+// location only **
+// location & bedroom **
+// location & bathroom **
+// location & price **
+// location & bedroom & bathroom -- no price **
+// location & bedroom & price -- no bathroom **
+// location & bathroom & price -- no bedroom **
+
+// bedroom only **
+// bedroom & bathroom **
+// bedroom & price **
+// bedroom & bathroom & price -- no location **
+
+// bathroom only **
+// bathroom & price
+
+// price only
 
 // ------------LOCATION FUNCTIONS ------------------
 
-const locationFilter = (property, location, bedroom, bathroom) => {
+const locationFilter = (property, location) => {
    console.log('location filter');
    return property.filter((item) =>
       item.city.toLowerCase().includes(location.toLowerCase())
    );
 };
 
-const locationAndBedroomFilter = (property, location, bedroom, bathroom) => {
+const locationAndBedroomFilter = (property, location, bedroom) => {
    console.log('2 filters');
    return property.filter(
       (item) =>
          item.city.toLowerCase().includes(location.toLowerCase()) &&
          item.bedroom === bedroom
+   );
+};
+const locationAndBathroomFilter = (property, location, bathroom) => {
+   return property.filter(
+      (item) =>
+         item.city.toLowerCase().includes(location.toLowerCase()) &&
+         item.bathroom === bathroom
+   );
+};
+const locationAndPriceFilter = (property, location, price) => {
+   return property.filter(
+      (item) =>
+         item.city.toLowerCase().includes(location.toLowerCase()) &&
+         item.price.toString().split('')[0] === price.toString()
    );
 };
 
@@ -51,7 +81,69 @@ const locationBedroomBathroomFilter = (
    );
 };
 
+const locationBedroomPrice = (property, location, bedroom, price) => {
+   return property.filter(
+      (item) =>
+         item.city.toLowerCase().includes(location.toLowerCase()) &&
+         item.bedroom === bedroom &&
+         item.price.toString().split('')[0] === price.toString()
+   );
+};
+const locationBathroomPrice = (property, location, bathroom, price) => {
+   return property.filter(
+      (item) =>
+         item.city.toLowerCase().includes(location.toLowerCase()) &&
+         item.bathroom === bathroom &&
+         item.price.toString().split('')[0] === price.toString()
+   );
+};
+
 // ----------------BEDROOM FUNCTIONS ---------------------------
+const bedroomFilter = (property, bedroom) => {
+   return property.filter((item) => item.bedroom === bedroom);
+};
+
+const bedRoomAndBathroomFilter = (property, bedroom, bathroom) => {
+   return property.filter(
+      (item) => item.bedroom === bedroom && item.bathroom === bathroom
+   );
+};
+const bedroomAndPriceFilter = (property, bedroom, price) => {
+   return property.filter(
+      (item) =>
+         item.bedroom === bedroom &&
+         item.price.toString().split('')[0] === price.toString()
+   );
+};
+
+const bedroomBathroomPrice = (property, bedroom, bathroom, price) => {
+   return property.filter(
+      (item) =>
+         item.bedroom === bedroom &&
+         item.bathroom === bathroom &&
+         item.price.toString().split('')[0] === price.toString()
+   );
+};
+
+// ----------------BATHROOM FUNCTIONS ---------------------------
+const bathroomFilter = (property, bathroom) => {
+   return property.filter((item) => item.bathroom === bathroom);
+};
+
+const bathroomAndPriceFilter = (property, bathroom, price) => {
+   return property.filter(
+      (item) =>
+         item.bathroom === bathroom &&
+         item.price.toString().split('')[0] === price.toString()
+   );
+};
+
+//-------------------------PRICE FUNCTIONS--------------------------
+const priceFilter = (property, price) => {
+   return property.filter(
+      (item) => item.price.toString().split('')[0] === price.toString()
+   );
+};
 
 const filteredProperty = (property, location, bedroom, bathroom, price) => {
    if (
@@ -77,7 +169,7 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
       );
    }
    // --------------- LOCATION CONDITIONS -------------------
-   /* Location SELECTED, bedroom & bathroom & price NOT */
+   /* Location Only */
    if (
       !location.toLowerCase().includes('any') &&
       bedroom === 'Any' &&
@@ -86,7 +178,8 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
    ) {
       return locationFilter(property, location);
    }
-   /* Location & Bedroom SELECTED */
+
+   /* Location & Bedroom*/
    if (
       !location.toLowerCase().includes('any') &&
       bedroom !== 'Any' &&
@@ -95,13 +188,33 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
    ) {
       return locationAndBedroomFilter(property, location, bedroom, price);
    }
-   /*Location, Bedroom, Bathroom SELECTED , price NOT*/
+
+   /* Location & bathroom */
+   if (
+      !location.toLowerCase().includes('any') &&
+      bedroom === 'Any' &&
+      bathroom !== 'Any' &&
+      price === 'Any'
+   )
+      return locationAndBathroomFilter(property, location, bathroom);
+
+   /* Location & Price */
+   if (
+      !location.toLowerCase().includes('any') &&
+      bedroom === 'Any' &&
+      bathroom === 'Any' &&
+      price !== 'Any'
+   ) {
+      return locationAndPriceFilter(property, location, price);
+   }
+
+   /*Location, Bedroom, Bathroom SELECTED */
    if (
       !location.toLowerCase().includes('any') &&
       bedroom !== 'Any' &&
-      bathroom !== 'Any'
+      bathroom !== 'Any' &&
+      price === 'Any'
    ) {
-      console.log(bathroom);
       return locationBedroomBathroomFilter(
          property,
          location,
@@ -109,7 +222,93 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
          bathroom
       );
    }
+
+   /*Location, Bedroom , Price */
+   if (
+      !location.toLowerCase().includes('any') &&
+      bedroom !== 'Any' &&
+      bathroom === 'Any' &&
+      price !== 'Any'
+   )
+      return locationBedroomPrice(property, location, bedroom, price);
+
+   /* location & bathroom & price */
+   if (
+      !location.toLowerCase().includes('any') &&
+      bedroom === 'Any' &&
+      bathroom !== 'Any' &&
+      price !== 'Any'
+   )
+      return locationBathroomPrice(property, location, bathroom, price);
+
    // --------------------BEDROOM CONDITIONS ------------------------
+   // Bedroom Only
+   if (
+      bedroom !== 'Any' &&
+      location.toLowerCase().includes('any') &&
+      bathroom === 'Any' &&
+      price === 'Any'
+   )
+      return bedroomFilter(property, bedroom);
+
+   //Bedroom and Bathroom
+   if (
+      bedroom !== 'Any' &&
+      bathroom !== 'Any' &&
+      location.toLowerCase().includes('any') &&
+      price === 'Any'
+   ) {
+      return bedRoomAndBathroomFilter(property, bedroom, bathroom);
+   }
+
+   //Bedroom and Price
+   if (
+      bedroom !== 'Any' &&
+      bathroom === 'Any' &&
+      location.toLowerCase().includes('any') &&
+      price !== 'Any'
+   ) {
+      return bedroomAndPriceFilter(property, bedroom, price);
+   }
+
+   // bedroom & bathroom & price
+   if (
+      bedroom !== 'Any' &&
+      bathroom !== 'Any' &&
+      price !== 'Any' &&
+      location.toLowerCase().includes('any')
+   ) {
+      return bedroomBathroomPrice(property, bedroom, bathroom, price);
+   }
+   // ------------------------BATHROOM CONDITIONS ----------------------------------
+   // bathroom only
+   if (
+      bathroom !== 'Any' &&
+      bedroom === 'Any' &&
+      price === 'Any' &&
+      location.toLowerCase().includes('any')
+   )
+      return bathroomFilter(property, bathroom);
+
+   // bathroom & price
+   if (
+      bathroom !== 'Any' &&
+      price !== 'Any' &&
+      bedroom === 'Any' &&
+      location.toLowerCase().includes('any')
+   ) {
+      return bathroomAndPriceFilter(property, bathroom, price);
+   }
+
+   // price only
+   if (
+      price !== 'Any' &&
+      bathroom === 'Any' &&
+      bedroom === 'Any' &&
+      location.toLowerCase().includes('any')
+   ) {
+      return priceFilter(property, price);
+   }
 };
 
 const propertyReducer = (state, action) => {
