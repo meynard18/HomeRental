@@ -20,10 +20,9 @@ const locations = [
    'Anaheim',
    'Orange County',
 ];
-
 const SearchBox = () => {
    const {
-      state: { location, property, bedroom, bathroom },
+      state: { location, property, bedroom, bathroom, price },
       dispatch,
    } = useContext(PropertyContext);
 
@@ -50,6 +49,13 @@ const SearchBox = () => {
    const handleBathroom = (e) => {
       dispatch({
          type: 'SET_BATHROOM',
+         payload: e.target.value,
+      });
+   };
+
+   const handlePrice = (e) => {
+      dispatch({
+         type: 'SET_PRICE',
          payload: e.target.value,
       });
    };
@@ -113,13 +119,14 @@ const SearchBox = () => {
                      label="Price"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
+                     value={price}
+                     onChange={handlePrice}
                   >
-                     <MenuItem value="any">Any</MenuItem>
-                     <MenuItem>$0-$999</MenuItem>
-                     <MenuItem>$1000-$1999</MenuItem>
-                     <MenuItem>$2000-$2999</MenuItem>
-                     <MenuItem>$3000-$3999</MenuItem>
-                     <MenuItem>$4000+</MenuItem>
+                     <MenuItem value="Any">Any</MenuItem>
+                     <MenuItem value={0}>$0-$999</MenuItem>
+                     <MenuItem value={1}>$1000-$1999</MenuItem>
+                     <MenuItem value={2}>$2000-$2999</MenuItem>
+                     <MenuItem value={3}>$3000++</MenuItem>
                   </Select>
                </StyledFormControl>
                <StyledButton type="submit">Show Result</StyledButton>
