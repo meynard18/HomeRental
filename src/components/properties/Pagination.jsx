@@ -18,17 +18,13 @@ const PaginationOutlined = () => {
 
    const calcPageCount = () => {
       //calculate page count based on array length. each page shows 10
-      console.log(propertyFiltered);
       let itemCount = propertyFiltered.length / 10;
       let count = Math.floor(itemCount) + (Number.isInteger(itemCount) ? 0 : 1);
-      console.log(count);
-      console.log(itemCount);
-      console.log(range.start);
+      setRange({ start: 0, end: 9 });
       return setPageCount(count);
    };
 
    const updateRange = (value) => {
-      //sets range(from...to) of data of the jobsData.filtered, see SearchResults.js
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       switch (value.type) {
@@ -61,6 +57,7 @@ const PaginationOutlined = () => {
             shape="rounded"
             renderItem={(item) => {
                // console.log(item)
+               console.log(range.start === 0 ? item.disabled : 'enable');
                return (
                   <PaginationItem
                      components={{
@@ -70,6 +67,7 @@ const PaginationOutlined = () => {
                      {...item}
                      onClick={() => {
                         item.onClick();
+                        console.log(item);
                         updateRange(item);
                      }}
                   />

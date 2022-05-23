@@ -273,7 +273,6 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
 const propertyReducer = (state, action) => {
    switch (action.type) {
       case 'SET_PROPERTY':
-         console.log('need to set propertyfiltered to initial value');
          return {
             ...state,
             property: action.payload,
@@ -281,7 +280,6 @@ const propertyReducer = (state, action) => {
          };
 
       case 'SET_LOCATION':
-         console.log(state.location);
          return {
             ...state,
             location: action.payload,
