@@ -1,12 +1,10 @@
 const locationFilter = (property, location) => {
-   console.log('location filter');
    return property.filter((item) =>
       item.city.toLowerCase().includes(location.toLowerCase())
    );
 };
 
 const locationAndBedroomFilter = (property, location, bedroom) => {
-   console.log('2 filters');
    return property.filter(
       (item) =>
          item.city.toLowerCase().includes(location.toLowerCase()) &&

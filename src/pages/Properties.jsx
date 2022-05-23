@@ -7,7 +7,7 @@ import SearchResult from '../components/properties/SearchResult';
 import Pagination from '../components/properties/Pagination';
 import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
-import propertyReducer from '../components/PropertyReducer';
+import propertyReducer from '../components/reducer/PropertyReducer';
 
 /* first filter works, second DOES not work
 --- need to reset the properties to initial value everytime filter changes
@@ -52,20 +52,7 @@ const Properties = () => {
       dispatch,
    };
 
-   // useEffect(() => {
-   //    fetch('../data/rentalProperties')
-   //       .then((res) => res.text())
-   //       .then((payload) =>
-   //          dispatch({
-   //             type: 'SET_PROPERTY',
-   //             payload,
-   //          })
-   //       );
-   // }, []);
-
-   useEffect(() => {
-      console.log('filters');
-   }, [state.propertyFiltered]);
+   useEffect(() => {}, [state.propertyFiltered]);
 
    return (
       <>
