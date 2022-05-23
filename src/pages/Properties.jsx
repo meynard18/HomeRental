@@ -43,7 +43,7 @@ const Properties = () => {
       bedroom: 'Any',
       price: 'Any',
    });
-   const [range, setRange] = useState({ start: 0, end: 9 });
+   const [range, setRange] = useState({ start: 0, end: 8 });
 
    const searchProperties = {
       range,

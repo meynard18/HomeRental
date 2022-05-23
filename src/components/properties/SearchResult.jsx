@@ -21,6 +21,10 @@ const city = [
    'San Diego',
    'Anaheim',
    'Orange',
+   'Temecula',
+   'Sta Monica',
+   'Newport Beach',
+   'Oceanside',
 ];
 
 const SearchResult = () => {

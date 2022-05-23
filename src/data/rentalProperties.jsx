@@ -1,6 +1,40 @@
 import featured1 from '../images/featured1.jpg';
 import featured2 from '../images/featured2.jpg';
 import featured3 from '../images/featured3.jpg';
+import property1 from '../images/property1.jpg';
+import property2 from '../images/property2.jpg';
+import property3 from '../images/property3.jpg';
+import property4 from '../images/property4.jpg';
+import property5 from '../images/property5.jpg';
+import property6 from '../images/property6.jpg';
+import property7 from '../images/property7.jpg';
+import property8 from '../images/property8.jpg';
+import property9 from '../images/property9.jpg';
+import property10 from '../images/property10.jpg';
+import property11 from '../images/property11.jpg';
+import property12 from '../images/property12.jpg';
+import property13 from '../images/property13.jpg';
+import property14 from '../images/property14.jpg';
+import property15 from '../images/property15.jpg';
+import property16 from '../images/property16.jpg';
+import property17 from '../images/property17.jpg';
+import property18 from '../images/property18.jpg';
+import property19 from '../images/property19.jpg';
+import property20 from '../images/property20.jpg';
+import property21 from '../images/property21.jpg';
+import property22 from '../images/property22.jpg';
+import property23 from '../images/property23.jpg';
+import property24 from '../images/property24.jpg';
+import property25 from '../images/property25.jpg';
+import property26 from '../images/property26.jpg';
+import property27 from '../images/property27.jpg';
+import property28 from '../images/property28.jpg';
+import property29 from '../images/property29.jpg';
+import property30 from '../images/property30.jpg';
+import property31 from '../images/property31.jpg';
+import property32 from '../images/property32.jpg';
+import property33 from '../images/property33.jpg';
+import property34 from '../images/property34.jpg';
 
 const rental = [
    {
@@ -48,6 +82,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-01-01',
+      image: property1,
    },
    {
       id: 5,
@@ -58,6 +93,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-12-27',
+      image: property2,
    },
    {
       id: 6,
@@ -68,6 +104,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-04-01',
+      image: property3,
    },
    {
       id: 7,
@@ -78,6 +115,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-01-24',
+      image: property4,
    },
    {
       id: 8,
@@ -88,6 +126,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2021-12-08',
+      image: property5,
    },
    {
       id: 9,
@@ -98,16 +137,18 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2022-03-16',
+      image: property6,
    },
    {
       id: 10,
       street_address: '4725 Dixon Place',
-      city: 'Riverside',
+      city: 'Temecula',
       state: 'California',
       price: 1678,
       bedroom: 2,
       bathroom: 3,
       date: '2021-11-08',
+      image: property7,
    },
    {
       id: 11,
@@ -118,26 +159,29 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-02-17',
+      image: property8,
    },
    {
       id: 12,
       street_address: '2 West Road',
-      city: 'Culver City',
+      city: 'Newport Beach',
       state: 'California',
       price: 2164,
       bedroom: 4,
       bathroom: 3,
       date: '2022-02-09',
+      image: property9,
    },
    {
       id: 13,
       street_address: '492 Victoria Park',
-      city: 'Riverside',
+      city: 'Temecula',
       state: 'California',
       price: 3163,
       bedroom: 4,
       bathroom: 1,
       date: '2021-12-30',
+      image: property10,
    },
    {
       id: 14,
@@ -148,6 +192,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2022-02-22',
+      image: property11,
    },
    {
       id: 15,
@@ -158,6 +203,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-10',
+      image: property12,
    },
    {
       id: 16,
@@ -168,6 +214,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2022-03-27',
+      image: property13,
    },
    {
       id: 17,
@@ -178,6 +225,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-12-31',
+      image: property14,
    },
    {
       id: 18,
@@ -188,16 +236,18 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2022-02-18',
+      image: property15,
    },
    {
       id: 19,
       street_address: '5 Sunbrook Point',
-      city: 'Santa Barbara',
+      city: 'Pasadena',
       state: 'California',
       price: 2948,
       bedroom: 4,
       bathroom: 1,
       date: '2022-03-26',
+      image: property16,
    },
    {
       id: 20,
@@ -208,6 +258,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-12-30',
+      image: property17,
    },
    {
       id: 21,
@@ -218,6 +269,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-01-01',
+      image: property18,
    },
    {
       id: 22,
@@ -228,6 +280,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-03-11',
+      image: property19,
    },
    {
       id: 23,
@@ -238,6 +291,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-24',
+      image: property20,
    },
    {
       id: 24,
@@ -248,6 +302,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2021-11-17',
+      image: property21,
    },
    {
       id: 25,
@@ -258,16 +313,18 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2021-12-11',
+      image: property22,
    },
    {
       id: 26,
       street_address: '298 Pankratz Court',
-      city: 'Moreno Valley',
+      city: 'Pasadena',
       state: 'California',
       price: 1532,
       bedroom: 2,
       bathroom: 1,
       date: '2021-12-16',
+      image: property23,
    },
    {
       id: 27,
@@ -278,26 +335,29 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2021-12-01',
+      image: property24,
    },
    {
       id: 28,
       street_address: '14232 West Circle',
-      city: 'Moreno Valley',
+      city: 'Pasadena',
       state: 'California',
       price: 2992,
       bedroom: 3,
       bathroom: 2,
       date: '2021-11-14',
+      image: property25,
    },
    {
       id: 29,
       street_address: '21492 Karstens Crossing',
-      city: 'Carlsbad',
+      city: 'Orange County',
       state: 'California',
       price: 1922,
       bedroom: 3,
       bathroom: 1,
       date: '2022-03-25',
+      image: property26,
    },
    {
       id: 30,
@@ -308,26 +368,29 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2021-11-08',
+      image: property27,
    },
    {
       id: 31,
       street_address: '1 Del Sol Alley',
-      city: 'Long Beach',
+      city: 'Sta Monica',
       state: 'California',
       price: 2960,
       bedroom: 4,
       bathroom: 2,
       date: '2021-12-15',
+      image: property28,
    },
    {
       id: 32,
       street_address: '84906 Aberg Road',
-      city: 'Carlsbad',
+      city: 'Orange County',
       state: 'California',
       price: 1804,
       bedroom: 2,
       bathroom: 3,
       date: '2022-03-22',
+      image: property29,
    },
    {
       id: 33,
@@ -338,6 +401,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2021-11-25',
+      image: property30,
    },
    {
       id: 34,
@@ -348,41 +412,45 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-21',
+      image: property31,
    },
    {
       id: 35,
       street_address: '69 Carpenter Park',
-      city: 'Fullerton',
+      city: 'Sta Monica',
       state: 'California',
       price: 1800,
       bedroom: 4,
       bathroom: 1,
       date: '2021-10-28',
+      image: property32,
    },
    {
       id: 36,
       street_address: '8 Mccormick Lane',
-      city: 'Torrance',
+      city: 'Sta Monica',
       state: 'California',
       price: 2062,
       bedroom: 2,
       bathroom: 2,
       date: '2022-03-31',
+      image: property33,
    },
    {
       id: 37,
       street_address: '37241 Westridge Alley',
-      city: 'Carlsbad',
+      city: 'Orange County',
       state: 'California',
       price: 2371,
       bedroom: 3,
       bathroom: 1,
       date: '2022-02-16',
+      image: property34,
    },
    {
       id: 38,
       street_address: '62 High Crossing Alley',
-      city: 'Riverside',
+      city: 'Pasadena',
       state: 'California',
       price: 1674,
       bedroom: 2,
@@ -422,7 +490,7 @@ const rental = [
    {
       id: 42,
       street_address: '58 Green Alley',
-      city: 'Santa Clara',
+      city: 'Anaheim',
       state: 'California',
       price: 3435,
       bedroom: 2,
@@ -442,7 +510,7 @@ const rental = [
    {
       id: 44,
       street_address: '87 Oakridge Park',
-      city: 'Inglewood',
+      city: 'Temecula',
       state: 'California',
       price: 2103,
       bedroom: 4,
@@ -472,7 +540,7 @@ const rental = [
    {
       id: 47,
       street_address: '888 Tomscot Park',
-      city: 'Riverside',
+      city: 'Pasadena',
       state: 'California',
       price: 3298,
       bedroom: 4,
@@ -502,7 +570,7 @@ const rental = [
    {
       id: 50,
       street_address: '651 Burning Wood Point',
-      city: 'Berkeley',
+      city: 'Newport Beach',
       state: 'California',
       price: 2978,
       bedroom: 4,
