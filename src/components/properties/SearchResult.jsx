@@ -42,7 +42,7 @@ const SearchResult = () => {
             )
             .map((item, idx) => (
                <Box key={idx}>
-                  <Card sx={{ maxWidth: 385 }}>
+                  <Card sx={{ maxWidth: 400 }}>
                      <CardActionArea>
                         <CardMedia
                            component="img"

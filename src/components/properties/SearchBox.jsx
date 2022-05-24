@@ -18,7 +18,7 @@ const locations = [
    'Los Angles',
    'San Diego',
    'Anaheim',
-   'Orange',
+   'Orange County',
    'Temecula',
    'Sta Monica',
    'Newport Beach',

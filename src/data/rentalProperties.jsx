@@ -35,6 +35,19 @@ import property31 from '../images/property31.jpg';
 import property32 from '../images/property32.jpg';
 import property33 from '../images/property33.jpg';
 import property34 from '../images/property34.jpg';
+import property35 from '../images/property35.jpg';
+import property36 from '../images/property36.jpg';
+import property37 from '../images/property37.jpg';
+import property38 from '../images/property38.jpg';
+import property39 from '../images/property39.jpg';
+import property40 from '../images/property40.jpg';
+import property41 from '../images/property41.jpg';
+import property42 from '../images/property42.jpg';
+import property43 from '../images/property43.jpg';
+import property44 from '../images/property44.jpg';
+import property45 from '../images/property45.jpg';
+import property46 from '../images/property46.jpg';
+import property47 from '../images/property47.jpg';
 
 const rental = [
    {
@@ -456,6 +469,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2021-12-18',
+      image: property35,
    },
    {
       id: 39,
@@ -466,6 +480,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2022-01-30',
+      image: property36,
    },
    {
       id: 40,
@@ -476,6 +491,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2022-01-27',
+      image: property37,
    },
    {
       id: 41,
@@ -486,6 +502,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-11-07',
+      image: property38,
    },
    {
       id: 42,
@@ -496,6 +513,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2022-01-15',
+      image: property39,
    },
    {
       id: 43,
@@ -506,6 +524,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-03-22',
+      image: property40,
    },
    {
       id: 44,
@@ -516,6 +535,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2021-11-11',
+      image: property41,
    },
    {
       id: 45,
@@ -526,6 +546,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2022-03-04',
+      image: property42,
    },
    {
       id: 46,
@@ -536,6 +557,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2022-02-02',
+      image: property43,
    },
    {
       id: 47,
@@ -546,6 +568,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2022-01-16',
+      image: property44,
    },
    {
       id: 48,
@@ -556,6 +579,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2022-03-01',
+      image: property45,
    },
    {
       id: 49,
@@ -566,6 +590,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2022-01-31',
+      image: property46,
    },
    {
       id: 50,
@@ -576,6 +601,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2022-03-12',
+      image: property47,
    },
 ];
 
