@@ -18,9 +18,9 @@ const PaginationOutlined = () => {
 
    const calcPageCount = () => {
       //calculate page count based on array length. each page shows 10
-      let itemCount = propertyFiltered.length / 10;
+      let itemCount = propertyFiltered.length / 9;
       let count = Math.floor(itemCount) + (Number.isInteger(itemCount) ? 0 : 1);
-      setRange({ start: 0, end: 9 });
+      setRange({ start: 0, end: 8 });
       return setPageCount(count);
    };
 
@@ -29,21 +29,26 @@ const PaginationOutlined = () => {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       switch (value.type) {
          case 'previous':
+            console.log(`previous : ${range.start - 9}`);
+            console.log(`previous : ${range.end - 9}`);
             setRange({
-               start: range.start - 10,
-               end: range.end - 10,
+               start: range.start - 9,
+               end: range.end - 9,
             });
             break;
          case 'next':
+            console.log(`next : ${range.start + 9}`);
+            console.log(`next : ${range.end + 9}`);
             setRange({
-               start: range.start + 10,
-               end: range.end + 10,
+               start: range.start + 9,
+               end: range.end + 9,
             });
             break;
          default:
             setRange({
-               start: value.page * 10 - 10,
-               end: value.page * 10 - 1,
+               start: value.page * 10 - (9 + value.page),
+               //
+               end: value.page * 10 - (value.page + 1),
             });
       }
    };
@@ -56,8 +61,6 @@ const PaginationOutlined = () => {
             variant="outlined"
             shape="rounded"
             renderItem={(item) => {
-               // console.log(item)
-               console.log(range.start === 0 ? item.disabled : 'enable');
                return (
                   <PaginationItem
                      components={{
@@ -67,7 +70,6 @@ const PaginationOutlined = () => {
                      {...item}
                      onClick={() => {
                         item.onClick();
-                        console.log(item);
                         updateRange(item);
                      }}
                   />

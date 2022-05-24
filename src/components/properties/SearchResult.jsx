@@ -29,7 +29,7 @@ const city = [
 
 const SearchResult = () => {
    const {
-      state: { property, propertyFiltered },
+      state: { propertyFiltered },
       range,
    } = useContext(PropertyContext);
    return (

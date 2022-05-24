@@ -6,7 +6,6 @@ import {
    Box,
    InputLabel,
    FormControl,
-   OutlinedInput,
    Select,
    MenuItem,
    Button,
