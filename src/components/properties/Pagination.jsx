@@ -1,5 +1,6 @@
 import { PropertyContext } from './PropertiesContext';
 import { useState, useContext, useEffect } from 'react';
+import { theme } from '../../CustomTheme';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 import Stack from '@mui/material/Stack';
@@ -46,7 +47,7 @@ const PaginationOutlined = () => {
             break;
          default:
             setRange({
-               start: value.page * 10 - (9 + value.page),
+               start: value.page * 10 - (value.page + 9),
                //
                end: value.page * 10 - (value.page + 1),
             });
@@ -67,6 +68,7 @@ const PaginationOutlined = () => {
                         previous: ArrowLeft,
                         next: ArrowRight,
                      }}
+                     sx={{ color: `${theme.palette.bg.secondary}` }}
                      {...item}
                      onClick={() => {
                         item.onClick();
@@ -84,5 +86,8 @@ export default PaginationOutlined;
 const PaginationContainer = styled(Pagination)`
    display: flex;
    justify-content: center;
-   margin-top: 2rem;
+   margin: 1.5rem auto;
+   background-color: ${theme.palette.grey[800]};
+   width: 85%;
+   padding: 1.5rem 0;
 `;

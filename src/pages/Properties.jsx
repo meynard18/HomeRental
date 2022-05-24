@@ -8,6 +8,7 @@ import Pagination from '../components/properties/Pagination';
 import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import propertyReducer from '../components/reducer/PropertyReducer';
+import { Typography } from '@mui/material';
 
 /* first filter works, second DOES not work
 --- need to reset the properties to initial value everytime filter changes
@@ -59,7 +60,7 @@ const Properties = () => {
          <PropertyContext.Provider value={searchProperties}>
             <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
                <SearchBox />
-               <h1>Property Page</h1>
+               <Typography>Property Listing</Typography>
                <SearchResult />
                <Pagination />
             </MainContainer>

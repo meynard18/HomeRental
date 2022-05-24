@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Properties from './pages/Properties';
+import Footer2 from './components/Footer2';
 import { theme } from './CustomTheme';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -23,6 +24,7 @@ function App() {
                   <Route exact path="/properties" element={<Properties />} />
                   <Route exact path="/contact" element={<Contact />} />
                </Routes>
+               <Footer2 />
             </Router>
          </GlobalData.Provider>
       </ThemeProvider>

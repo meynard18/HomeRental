@@ -114,11 +114,11 @@ export default function SpacingGrid() {
                   </StyledPaper>
                </Grid>
             </StyledGrid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
                <CopyrightsContainer>
                   Copyrights &copy; 2022 Company Name
                </CopyrightsContainer>
-            </Grid>
+            </Grid> */}
          </MainContainer>
       </>
    );

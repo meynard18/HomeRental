@@ -95,6 +95,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-01-01',
+      size: 2150,
       image: property1,
    },
    {
@@ -106,6 +107,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-12-27',
+      size: 1950,
       image: property2,
    },
    {
@@ -117,6 +119,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-04-01',
+      size: 2085,
       image: property3,
    },
    {
@@ -128,6 +131,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-01-24',
+      size: 2250,
       image: property4,
    },
    {
@@ -139,6 +143,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2021-12-08',
+      size: 2650,
       image: property5,
    },
    {
@@ -150,6 +155,7 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2022-03-16',
+      size: 2430,
       image: property6,
    },
    {
@@ -161,6 +167,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2021-11-08',
+      size: 1995,
       image: property7,
    },
    {
@@ -172,6 +179,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-02-17',
+      size: 2095,
       image: property8,
    },
    {
@@ -183,6 +191,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2022-02-09',
+      size: 2290,
       image: property9,
    },
    {
@@ -192,8 +201,9 @@ const rental = [
       state: 'California',
       price: 3163,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 2,
       date: '2021-12-30',
+      size: 2095,
       image: property10,
    },
    {
@@ -203,8 +213,9 @@ const rental = [
       state: 'California',
       price: 1970,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 3,
       date: '2022-02-22',
+      size: 2490,
       image: property11,
    },
    {
@@ -216,6 +227,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-10',
+      size: 2005,
       image: property12,
    },
    {
@@ -227,6 +239,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2022-03-27',
+      size: 2195,
       image: property13,
    },
    {
@@ -238,6 +251,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-12-31',
+      size: 1875,
       image: property14,
    },
    {
@@ -249,6 +263,7 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2022-02-18',
+      size: 1695,
       image: property15,
    },
    {
@@ -258,8 +273,9 @@ const rental = [
       state: 'California',
       price: 2948,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 2,
       date: '2022-03-26',
+      size: 2035,
       image: property16,
    },
    {
@@ -271,6 +287,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-12-30',
+      size: 2115,
       image: property17,
    },
    {
@@ -282,6 +299,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-01-01',
+      size: 1795,
       image: property18,
    },
    {
@@ -293,6 +311,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-03-11',
+      size: 1695,
       image: property19,
    },
    {
@@ -304,6 +323,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-24',
+      size: 2305,
       image: property20,
    },
    {
@@ -315,6 +335,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2021-11-17',
+      size: 2005,
       image: property21,
    },
    {
@@ -324,8 +345,9 @@ const rental = [
       state: 'California',
       price: 1921,
       bedroom: 2,
-      bathroom: 1,
+      bathroom: 2,
       date: '2021-12-11',
+      size: 1505,
       image: property22,
    },
    {
@@ -337,6 +359,7 @@ const rental = [
       bedroom: 2,
       bathroom: 1,
       date: '2021-12-16',
+      size: 1775,
       image: property23,
    },
    {
@@ -346,8 +369,9 @@ const rental = [
       state: 'California',
       price: 1579,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 3,
       date: '2021-12-01',
+      size: 2695,
       image: property24,
    },
    {
@@ -359,6 +383,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2021-11-14',
+      size: 2105,
       image: property25,
    },
    {
@@ -370,6 +395,7 @@ const rental = [
       bedroom: 3,
       bathroom: 1,
       date: '2022-03-25',
+      size: 1795,
       image: property26,
    },
    {
@@ -381,6 +407,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2021-11-08',
+      size: 2020,
       image: property27,
    },
    {
@@ -392,6 +419,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2021-12-15',
+      size: 2220,
       image: property28,
    },
    {
@@ -403,6 +431,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2022-03-22',
+      size: 1520,
       image: property29,
    },
    {
@@ -414,6 +443,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2021-11-25',
+      size: 1400,
       image: property30,
    },
    {
@@ -425,6 +455,7 @@ const rental = [
       bedroom: 4,
       bathroom: 3,
       date: '2021-11-21',
+      size: 2220,
       image: property31,
    },
    {
@@ -436,6 +467,7 @@ const rental = [
       bedroom: 4,
       bathroom: 1,
       date: '2021-10-28',
+      size: 1820,
       image: property32,
    },
    {
@@ -447,6 +479,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2022-03-31',
+      size: 1320,
       image: property33,
    },
    {
@@ -458,6 +491,7 @@ const rental = [
       bedroom: 3,
       bathroom: 1,
       date: '2022-02-16',
+      size: 1400,
       image: property34,
    },
    {
@@ -469,6 +503,7 @@ const rental = [
       bedroom: 2,
       bathroom: 2,
       date: '2021-12-18',
+      size: 1130,
       image: property35,
    },
    {
@@ -480,6 +515,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2022-01-30',
+      size: 1750,
       image: property36,
    },
    {
@@ -491,6 +527,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2022-01-27',
+      size: 1860,
       image: property37,
    },
    {
@@ -502,6 +539,7 @@ const rental = [
       bedroom: 3,
       bathroom: 3,
       date: '2021-11-07',
+      size: 1550,
       image: property38,
    },
    {
@@ -513,6 +551,7 @@ const rental = [
       bedroom: 2,
       bathroom: 3,
       date: '2022-01-15',
+      size: 1430,
       image: property39,
    },
    {
@@ -524,6 +563,7 @@ const rental = [
       bedroom: 3,
       bathroom: 2,
       date: '2022-03-22',
+      size: 1780,
       image: property40,
    },
    {
@@ -533,8 +573,9 @@ const rental = [
       state: 'California',
       price: 2103,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 2,
       date: '2021-11-11',
+      size: 2400,
       image: property41,
    },
    {
@@ -544,8 +585,9 @@ const rental = [
       state: 'California',
       price: 3195,
       bedroom: 2,
-      bathroom: 3,
+      bathroom: 1,
       date: '2022-03-04',
+      size: 1150,
       image: property42,
    },
    {
@@ -554,9 +596,10 @@ const rental = [
       city: 'Los Angeles',
       state: 'California',
       price: 3222,
-      bedroom: 2,
+      bedroom: 3,
       bathroom: 3,
       date: '2022-02-02',
+      size: 1810,
       image: property43,
    },
    {
@@ -568,6 +611,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2022-01-16',
+      size: 2400,
       image: property44,
    },
    {
@@ -579,6 +623,7 @@ const rental = [
       bedroom: 4,
       bathroom: 2,
       date: '2022-03-01',
+      size: 2140,
       image: property45,
    },
    {
@@ -588,8 +633,9 @@ const rental = [
       state: 'California',
       price: 2029,
       bedroom: 4,
-      bathroom: 1,
+      bathroom: 2,
       date: '2022-01-31',
+      size: 1990,
       image: property46,
    },
    {
@@ -598,9 +644,10 @@ const rental = [
       city: 'Newport Beach',
       state: 'California',
       price: 2978,
-      bedroom: 4,
+      bedroom: 3,
       bathroom: 1,
       date: '2022-03-12',
+      size: 1400,
       image: property47,
    },
 ];

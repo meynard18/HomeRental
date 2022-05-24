@@ -41,9 +41,9 @@ const SearchResult = () => {
                   propertyFiltered.indexOf(item) <= range.end
             )
             .map((item, idx) => (
-               <Box key={idx}>
-                  <Card sx={{ maxWidth: 400 }}>
-                     <CardActionArea>
+               <Box key={idx} sx={{ mb: 2 }}>
+                  <Card sx={{ maxWidth: 360, borderRadius: 0 }}>
+                     <CardActionArea sx={{ cursor: 'auto' }}>
                         <CardMedia
                            component="img"
                            height="240"
@@ -52,16 +52,26 @@ const SearchResult = () => {
                         />
                         <CardContent>
                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="div"
+                              sx={{ fontWeight: 500, fontSize: 18, ml: 1 }}
                            >
                               ${item.price} / mo
                            </Typography>
-                           <Typography variant="body2" color="text.secondary">
-                              {item.street_address}, {item.city} {item.state}
+                           <Typography
+                              variant="body2"
+                              color="text.secondary"
+                              sx={{ ml: 1 }}
+                           >
+                              {item.street_address.slice(0, 20)}, {item.city}{' '}
+                              {item.state}
                            </Typography>
-                           <Box sx={{ display: 'flex' }}>
+                           <Box
+                              sx={{
+                                 display: 'flex',
+                                 gap: 3,
+                                 mt: 2,
+                                 justifyContent: 'center',
+                              }}
+                           >
                               <IconBox>
                                  <Icon
                                     icon="ic:outline-bedroom-child"
@@ -73,13 +83,13 @@ const SearchResult = () => {
                                     }}
                                  >
                                     {item.bedroom}
-                                    Bedroom
+                                    Beds
                                  </Typography>
                               </IconBox>
                               <IconBox>
                                  <Icon icon="cil:bathroom" height="30" />
                                  <Typography sx={{ fontWeight: 500 }}>
-                                    {item.bathroom} Bathroom
+                                    {item.bathroom} Baths
                                  </Typography>
                               </IconBox>
                               <IconBox>
@@ -105,16 +115,22 @@ const MainContainer = styled(Box)`
    background-color: lightblue;
 `;
 
-const IconBox = styled(Box)``;
-
 const StyledButton = styled(Button)`
    border-radius: 0px;
-   width: 100%;
-   margin-top: -0.25rem;
-   margin-bottom: 0.5rem;
+   width: 90%;
+   display: flex;
+   margin: 0.25rem auto 1.25rem auto;
    color: white;
    background-color: ${theme.palette.black[500]};
    &:hover {
       background-color: darkred;
+   }
+`;
+
+const IconBox = styled(Box)`
+   display: flex;
+   align-items: center;
+   @media (max-width: 360px) {
+      margin: 0 -0.5rem;
    }
 `;
