@@ -17,7 +17,7 @@ import {
 const city = [
    'Any',
    'Pasadena',
-   'Los Angles',
+   'Los Angeles',
    'San Diego',
    'Anaheim',
    'Orange',

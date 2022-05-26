@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const locationFilter = (property, location) => {
    return property.filter((item) =>
       item.city.toLowerCase().includes(location.toLowerCase())
@@ -270,12 +272,31 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
       return priceFilter(property, price);
    }
 };
+
+const sortProperties = (property, value) => {
+   const d = new Date();
+   const datePosted = d.getTime();
+   if (value === 0) {
+      return property.sort((a, b) => b.price - a.price);
+   }
+   if (value === 1) {
+      console.log(`low price`);
+      return property.sort((a, b) => a.price - b.price);
+   }
+   if (value === 2) {
+      console.log('date');
+      return property.sort((a, b) => new Date(b.date) - new Date(a.date));
+   }
+   return property;
+};
+
 const propertyReducer = (state, action) => {
+   const valueOf = state.sort;
+   console.log(valueOf);
    switch (action.type) {
       case 'SET_PROPERTY':
          return {
             ...state,
-            property: action.payload,
             propertyFiltered: action.payload,
          };
 
@@ -285,13 +306,10 @@ const propertyReducer = (state, action) => {
             location: action.payload,
          };
       case 'SET_BEDROOM':
-         console.log(state.bedroom);
          return { ...state, bedroom: action.payload };
       case 'SET_BATHROOM':
-         console.log(state.bathroom);
          return { ...state, bathroom: action.payload };
       case 'SET_PRICE':
-         console.log(state.price);
          return { ...state, price: action.payload };
       case 'SET_FILTERS':
          return {
@@ -302,9 +320,23 @@ const propertyReducer = (state, action) => {
                state.location,
                state.bedroom,
                state.bathroom,
-               state.price
+               state.price,
+               state.sort
             ),
          };
+      // / need to create additional case for sorting////
+      // /set_sortBy is just capturing the value of the onclick function///
+      case 'SET_SORTVALUE':
+         console.log(state.sort);
+         return {
+            ...state,
+            sort: action.payload,
+            propertyFiltered: sortProperties(
+               state.propertyFiltered,
+               state.sort
+            ),
+         };
+      ////
       default:
          throw new Error('No action');
    }

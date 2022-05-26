@@ -68,7 +68,6 @@ const PaginationOutlined = () => {
                         previous: ArrowLeft,
                         next: ArrowRight,
                      }}
-                     sx={{ color: `${theme.palette.bg.secondary}` }}
                      {...item}
                      onClick={() => {
                         item.onClick();
@@ -86,8 +85,7 @@ export default PaginationOutlined;
 const PaginationContainer = styled(Pagination)`
    display: flex;
    justify-content: center;
-   margin: 1.5rem auto;
-   background-color: ${theme.palette.grey[800]};
+   margin: 1.5rem auto 2.5rem auto;
    width: 85%;
    padding: 1.5rem 0;
 `;

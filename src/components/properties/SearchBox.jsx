@@ -14,13 +14,14 @@ import {
 const locations = [
    'Any',
    'Pasadena',
-   'Los Angles',
+   'Los Angeles',
    'San Diego',
    'Anaheim',
-   'Orange County',
+   'Orange',
    'Temecula',
    'Sta Monica',
    'Newport Beach',
+   'Oceanside',
 ];
 const SearchBox = () => {
    const {

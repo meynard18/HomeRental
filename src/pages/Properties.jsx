@@ -9,6 +9,7 @@ import { PropertyContext } from '../components/properties/PropertiesContext';
 import { rental } from '../data/rentalProperties';
 import propertyReducer from '../components/reducer/PropertyReducer';
 import { Typography } from '@mui/material';
+import SortProperties from '../components/properties/SortProperties';
 
 /* first filter works, second DOES not work
 --- need to reset the properties to initial value everytime filter changes
@@ -43,7 +44,9 @@ const Properties = () => {
       bathroom: 'Any',
       bedroom: 'Any',
       price: 'Any',
+      sort: 'Default',
    });
+
    const [range, setRange] = useState({ start: 0, end: 9 });
 
    const searchProperties = {
@@ -53,14 +56,32 @@ const Properties = () => {
       dispatch,
    };
 
-   useEffect(() => {}, [state.propertyFiltered]);
-
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
             <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
                <SearchBox />
-               <Typography>Property Listing</Typography>
+               <Box
+                  sx={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     justifyContent: 'center',
+                  }}
+               >
+                  <Typography
+                     variant="h3"
+                     component="h3"
+                     sx={{
+                        textAlign: 'center',
+                        mt: 5,
+                        fontWeight: 500,
+                        fontSize: 40,
+                     }}
+                  >
+                     Property Listing
+                  </Typography>
+                  <SortProperties />
+               </Box>
                <SearchResult />
                <Pagination />
             </MainContainer>
