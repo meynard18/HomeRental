@@ -291,16 +291,15 @@ const sortProperties = (property, value) => {
 };
 
 const propertyReducer = (state, action) => {
-   const valueOf = state.sort;
-   console.log(valueOf);
    switch (action.type) {
-      case 'SET_PROPERTY':
-         return {
-            ...state,
-            propertyFiltered: action.payload,
-         };
+      // case 'SET_PROPERTY':
+      //    return {
+      //       ...state,
+      //       propertyFiltered: action.payload,
+      //    };
 
       case 'SET_LOCATION':
+         console.log('setlocation');
          return {
             ...state,
             location: action.payload,
@@ -312,6 +311,8 @@ const propertyReducer = (state, action) => {
       case 'SET_PRICE':
          return { ...state, price: action.payload };
       case 'SET_FILTERS':
+         console.log('apply filters');
+         console.log(state.propertyFiltered);
          return {
             ...state,
             filters: action.payload,
@@ -320,23 +321,17 @@ const propertyReducer = (state, action) => {
                state.location,
                state.bedroom,
                state.bathroom,
-               state.price,
-               state.sort
+               state.price
             ),
          };
       // / need to create additional case for sorting////
       // /set_sortBy is just capturing the value of the onclick function///
       case 'SET_SORTVALUE':
-         console.log(state.sort);
+         console.log('whats goign on ??');
          return {
             ...state,
-            sort: action.payload,
-            propertyFiltered: sortProperties(
-               state.propertyFiltered,
-               state.sort
-            ),
+            sortBy: action.payload,
          };
-      ////
       default:
          throw new Error('No action');
    }

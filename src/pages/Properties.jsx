@@ -11,30 +11,23 @@ import propertyReducer from '../components/reducer/PropertyReducer';
 import { Typography } from '@mui/material';
 import SortProperties from '../components/properties/SortProperties';
 
-/* first filter works, second DOES not work
---- need to reset the properties to initial value everytime filter changes
-
-*/
-
-// all filters **
-// no filters **
-// location only **
-// location & bedroom **
-// location & bathroom **
-// location & price **
-// location & bedroom & bathroom -- no price **
-// location & bedroom & price -- no bathroom **
-// location & bathroom & price -- no bedroom **
-
-// bedroom only **
-// bedroom & bathroom **
-// bedroom & price **
-// bedroom & bathroom & price -- no location **
-
-// bathroom only **
-// bathroom & price
-
-// price only
+const sortProperties = (property, value) => {
+   const d = new Date();
+   const datePosted = d.getTime();
+   if (value === 0) {
+      console.log('high to low');
+      return property.sort((a, b) => b.price - a.price);
+   }
+   if (value === 1) {
+      console.log(`low to high price`);
+      return property.sort((a, b) => a.price - b.price);
+   }
+   if (value === 2) {
+      console.log('date');
+      return property.sort((a, b) => new Date(b.date) - new Date(a.date));
+   }
+   return property;
+};
 
 const Properties = () => {
    const [state, dispatch] = useReducer(propertyReducer, {
@@ -44,8 +37,10 @@ const Properties = () => {
       bathroom: 'Any',
       bedroom: 'Any',
       price: 'Any',
-      sort: 'Default',
+      sortBy: 'Default',
    });
+
+   sortProperties(state.propertyFiltered, state.sortBy);
 
    const [range, setRange] = useState({ start: 0, end: 9 });
 
@@ -56,6 +51,7 @@ const Properties = () => {
       dispatch,
    };
 
+   useEffect(() => {}, []);
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
