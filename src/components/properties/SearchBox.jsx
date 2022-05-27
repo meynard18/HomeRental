@@ -76,6 +76,7 @@ const SearchBox = () => {
                      sx={{ borderRadius: 0 }}
                      onChange={handleLocation}
                      value={location}
+                     size="small"
                   >
                      {locations.map((item, idx) => (
                         <MenuItem key={idx} value={item}>
@@ -92,6 +93,7 @@ const SearchBox = () => {
                      sx={{ borderRadius: 0 }}
                      onChange={handleBedroom}
                      value={bedroom}
+                     size="small"
                   >
                      <MenuItem value="Any">Any</MenuItem>
                      <MenuItem value={1}>1 Bedroom</MenuItem>
@@ -108,6 +110,7 @@ const SearchBox = () => {
                      sx={{ borderRadius: 0 }}
                      onChange={handleBathroom}
                      value={bathroom}
+                     size="small"
                   >
                      <MenuItem value="Any">Any</MenuItem>
                      <MenuItem value={1}>1 Bathroom</MenuItem>
@@ -124,6 +127,7 @@ const SearchBox = () => {
                      sx={{ borderRadius: 0 }}
                      value={price}
                      onChange={handlePrice}
+                     size="small"
                   >
                      <MenuItem value="Any">Any</MenuItem>
                      <MenuItem value={0}>$0-$999</MenuItem>
@@ -132,7 +136,7 @@ const SearchBox = () => {
                      <MenuItem value={3}>$3000++</MenuItem>
                   </StyledSelect>
                </StyledFormControl>
-               <StyledButton type="submit">Show Result</StyledButton>
+               <StyledButton type="submit">Result</StyledButton>
             </StyledFormContainer>
          </SearchContainer>
       </MainContainer>
@@ -176,7 +180,7 @@ const StyledFormControl = styled(FormControl)`
 const StyledButton = styled(Button)`
    border-radius: 0px;
    width: 100%;
-
+   margin-left: 0.75rem;
    background-color: ${theme.palette.black[500]};
    color: white;
    &:hover {
