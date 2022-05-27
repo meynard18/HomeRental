@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Properties from './pages/Properties';
-import Footer2 from './components/Footer2';
+import Footer from './components/Footer';
 import { theme } from './CustomTheme';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -24,7 +24,7 @@ function App() {
                   <Route exact path="/properties" element={<Properties />} />
                   <Route exact path="/contact" element={<Contact />} />
                </Routes>
-               <Footer2 />
+               <Footer />
             </Router>
          </GlobalData.Provider>
       </ThemeProvider>

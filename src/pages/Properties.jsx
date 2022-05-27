@@ -26,6 +26,10 @@ const sortProperties = (property, value) => {
       console.log('date');
       return property.sort((a, b) => new Date(b.date) - new Date(a.date));
    }
+   if (value === 'Default') {
+      console.log('default value');
+      return property.sort((a, b) => a.id - b.id);
+   }
    return property;
 };
 
@@ -51,33 +55,38 @@ const Properties = () => {
       dispatch,
    };
 
-   useEffect(() => {}, []);
    return (
       <>
          <PropertyContext.Provider value={searchProperties}>
             <MainContainer maxWidth="xxl" sx={{ m: 'auto' }}>
+               <StyledHeader variant="h3" component="h3" fontWeight={500}>
+                  Property Listings
+               </StyledHeader>
                <SearchBox />
-               <Box
-                  sx={{
-                     display: 'flex',
-                     alignItems: 'center',
-                     justifyContent: 'center',
-                  }}
-               >
+               <FlexBox>
                   <Typography
+                     variant="subtitle1"
+                     component="div"
+                     sx={{ fontWeight: 500 }}
+                  >
+                     {state.propertyFiltered.length <= 1
+                        ? `Result : ${state.propertyFiltered.length} Listing`
+                        : `Result : ${state.propertyFiltered.length} Listings`}
+                  </Typography>
+                  <RemoveTypography
                      variant="h3"
                      component="h3"
                      sx={{
                         textAlign: 'center',
-                        mt: 5,
                         fontWeight: 500,
                         fontSize: 40,
                      }}
                   >
                      Property Listing
-                  </Typography>
+                  </RemoveTypography>
                   <SortProperties />
-               </Box>
+               </FlexBox>
+
                <SearchResult />
                <Pagination />
             </MainContainer>
@@ -90,4 +99,30 @@ export default Properties;
 
 const MainContainer = styled(Box)`
    background-color: ${theme.palette.bg.main};
+`;
+
+const FlexBox = styled(Box)`
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 3.5rem;
+   @media (max-width: 480px) {
+      margin: 2rem auto;
+      width: 90%;
+   }
+`;
+
+const StyledHeader = styled(Typography)`
+   display: none;
+   @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+   }
+`;
+
+const RemoveTypography = styled(Typography)`
+   @media (max-width: 768px) {
+      display: none;
+   }
 `;

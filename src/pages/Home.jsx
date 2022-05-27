@@ -2,7 +2,6 @@ import React from 'react';
 import Featured from '../components/home/Featured';
 import ChooseUs from '../components/home/ChooseUs';
 import Testimonials from '../components/home/Testimonials';
-import Footer from '../components/home/Footer';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
 import SearchIcon from '@mui/icons-material/Search';
@@ -68,12 +67,10 @@ const Home = () => {
                   />
                </ImageContainer>
             </FlexContainer>
-            <Box></Box>
          </StyledBox>
          <Featured />
          <ChooseUs />
          <Testimonials />
-         <Footer />
       </>
    );
 };

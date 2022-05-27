@@ -273,31 +273,8 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
    }
 };
 
-const sortProperties = (property, value) => {
-   const d = new Date();
-   const datePosted = d.getTime();
-   if (value === 0) {
-      return property.sort((a, b) => b.price - a.price);
-   }
-   if (value === 1) {
-      console.log(`low price`);
-      return property.sort((a, b) => a.price - b.price);
-   }
-   if (value === 2) {
-      console.log('date');
-      return property.sort((a, b) => new Date(b.date) - new Date(a.date));
-   }
-   return property;
-};
-
 const propertyReducer = (state, action) => {
    switch (action.type) {
-      // case 'SET_PROPERTY':
-      //    return {
-      //       ...state,
-      //       propertyFiltered: action.payload,
-      //    };
-
       case 'SET_LOCATION':
          console.log('setlocation');
          return {
@@ -311,8 +288,6 @@ const propertyReducer = (state, action) => {
       case 'SET_PRICE':
          return { ...state, price: action.payload };
       case 'SET_FILTERS':
-         console.log('apply filters');
-         console.log(state.propertyFiltered);
          return {
             ...state,
             filters: action.payload,

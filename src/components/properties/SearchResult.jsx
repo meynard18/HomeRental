@@ -41,7 +41,7 @@ const SearchResult = () => {
                   propertyFiltered.indexOf(item) <= range.end
             )
             .map((item, idx) => (
-               <Box key={idx} sx={{ mb: 2 }}>
+               <StyledBox key={idx} sx={{ mb: 2 }}>
                   <Card sx={{ maxWidth: 360, borderRadius: 0 }}>
                      <CardActionArea sx={{ cursor: 'auto' }}>
                         <CardMedia
@@ -103,7 +103,7 @@ const SearchResult = () => {
                      </CardActionArea>
                      <StyledButton>Schedule Viewing</StyledButton>
                   </Card>
-               </Box>
+               </StyledBox>
             ))}
       </Grid>
    );
@@ -111,8 +111,11 @@ const SearchResult = () => {
 
 export default SearchResult;
 
-const MainContainer = styled(Box)`
-   background-color: lightblue;
+const StyledBox = styled(Box)`
+   @media (max-width: 360px) {
+      width: 95%;
+      margin: auto;
+   }
 `;
 
 const StyledButton = styled(Button)`

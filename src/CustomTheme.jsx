@@ -16,6 +16,7 @@ export const theme = createTheme({
          500: '#272727',
          600: '#0C0C0C',
          700: '#242424',
+         800: '#0D0D0D',
       },
       grey: {
          200: '#574E4E',
@@ -24,7 +25,8 @@ export const theme = createTheme({
          500: '#DCD7D1',
          600: '#E8E8E8',
          700: '#504A4B',
-         800: '#B4B4B4',
+         800: '#E3E3E3',
+         900: '#51504E',
       },
    },
    breakpoints: {

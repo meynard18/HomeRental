@@ -83,9 +83,10 @@ const PaginationOutlined = () => {
 export default PaginationOutlined;
 
 const PaginationContainer = styled(Pagination)`
+   background-color: ${theme.palette.grey[800]};
    display: flex;
    justify-content: center;
-   margin: 1.5rem auto 2.5rem auto;
+   margin: 1.5rem auto;
    width: 85%;
    padding: 1.5rem 0;
 `;

@@ -70,7 +70,7 @@ const SearchBox = () => {
             <StyledFormContainer onSubmit={handleSubmit}>
                <StyledFormControl>
                   <InputLabel htmlFor="City">Location</InputLabel>
-                  <Select
+                  <StyledSelect
                      label="Location"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
@@ -82,11 +82,11 @@ const SearchBox = () => {
                            {item}
                         </MenuItem>
                      ))}
-                  </Select>
+                  </StyledSelect>
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Bedroom">Bedroom</InputLabel>
-                  <Select
+                  <StyledSelect
                      label="Beds"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
@@ -98,11 +98,11 @@ const SearchBox = () => {
                      <MenuItem value={2}>2 Bedrooms</MenuItem>
                      <MenuItem value={3}>3 Bedrooms</MenuItem>
                      <MenuItem value={4}>4 Bedrooms</MenuItem>
-                  </Select>
+                  </StyledSelect>
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Bathroom">Bathroom</InputLabel>
-                  <Select
+                  <StyledSelect
                      label="Beds"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
@@ -114,11 +114,11 @@ const SearchBox = () => {
                      <MenuItem value={2}>2 Bathrooms</MenuItem>
                      <MenuItem value={3}>3 Bathrooms</MenuItem>
                      <MenuItem value={4}>4 Bathrooms</MenuItem>
-                  </Select>
+                  </StyledSelect>
                </StyledFormControl>
                <StyledFormControl>
                   <InputLabel htmlFor="Price">Price</InputLabel>
-                  <Select
+                  <StyledSelect
                      label="Price"
                      variant="outlined"
                      sx={{ borderRadius: 0 }}
@@ -130,7 +130,7 @@ const SearchBox = () => {
                      <MenuItem value={1}>$1000-$1999</MenuItem>
                      <MenuItem value={2}>$2000-$2999</MenuItem>
                      <MenuItem value={3}>$3000++</MenuItem>
-                  </Select>
+                  </StyledSelect>
                </StyledFormControl>
                <StyledButton type="submit">Show Result</StyledButton>
             </StyledFormContainer>
@@ -143,7 +143,11 @@ export default SearchBox;
 const MainContainer = styled(Box)`
    background-color: ${theme.palette.bg.main};
    padding-top: 4rem;
+   @media (max-width: 480px) {
+      padding-top: 2rem;
+   }
 `;
+
 const SearchContainer = styled(Box)`
    background-color: ${theme.palette.grey[500]};
    width: 85%;
@@ -154,10 +158,19 @@ const SearchContainer = styled(Box)`
    align-items: center;
 `;
 
+const StyledSelect = styled(Select)`
+   @media (max-width: 480px) {
+      height: 2rem;
+   }
+`;
+
 const StyledFormControl = styled(FormControl)`
    background-color: white;
    width: 100%;
    margin: auto 0.75rem;
+   @media (max-width: 480px) {
+      margin: 0.5rem auto;
+   }
 `;
 
 const StyledButton = styled(Button)`
@@ -174,4 +187,7 @@ const StyledButton = styled(Button)`
 const StyledFormContainer = styled.form`
    display: flex;
    width: 90%;
+   @media (max-width: 480px) {
+      flex-direction: column;
+   }
 `;

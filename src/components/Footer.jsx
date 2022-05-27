@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
-import { theme } from '../../CustomTheme';
+import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
 import {
    Grid,
@@ -76,20 +76,18 @@ export default function SpacingGrid() {
                   </StyledPaper>
                </Grid>
                <Grid item xs={12} md={7} lg={3}>
-                  <StyledPaper>
-                     <Typography variant="h6" sx={{ mb: 2 }}>
-                        QUICKLINKS
-                     </Typography>
+                  <StyledPaper2>
+                     <Typography variant="h6">QUICKLINKS</Typography>
 
                      <StyledLink to="/">Home</StyledLink>
                      <StyledLink to="/about">About Us</StyledLink>
                      <StyledLink to="/properties">Properties</StyledLink>
                      <StyledLink to="#">Terms & Privacy</StyledLink>
                      <StyledLink to="#">FAQ's</StyledLink>
-                  </StyledPaper>
+                  </StyledPaper2>
                </Grid>
                <Grid item xs={12} md={7} lg={3}>
-                  <StyledPaper>
+                  <StyledPaper2>
                      <Typography variant="h6" sx={{ mb: 2 }}>
                         CONTACT US
                      </Typography>
@@ -111,21 +109,23 @@ export default function SpacingGrid() {
                         <Icon icon="ant-design:phone-outlined" height={24} />
                         <span>1234444</span>
                      </FlexContact>
-                  </StyledPaper>
+                  </StyledPaper2>
                </Grid>
             </StyledGrid>
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
                <CopyrightsContainer>
                   Copyrights &copy; 2022 Company Name
                </CopyrightsContainer>
-            </Grid> */}
+            </Grid>
          </MainContainer>
       </>
    );
 }
 
 const MainContainer = styled(Box)`
-   background-color: ${theme.palette.bg.main};
+   //background-color: ${theme.palette.bg.main};
+   margin-top: 2rem;
+   background-color: ${theme.palette.grey[900]};
 `;
 
 const StyledGrid = styled(Grid)`
@@ -138,9 +138,8 @@ const StyledGrid = styled(Grid)`
 `;
 
 const StyledPaper = styled(Paper)`
-   background-color: ${theme.palette.bg.secondary};
-   margin-top: 3.5rem;
-   margin-bottom: 2.5rem;
+   background-color: ${theme.palette.grey[900]};
+   color: white;
    display: flex;
    flex-direction: column;
    border-radius: 0px;
@@ -162,6 +161,32 @@ const StyledPaper = styled(Paper)`
       text-align: center;
    }
 `;
+const StyledPaper2 = styled(Paper)`
+   background-color: ${theme.palette.grey[900]};
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 0px;
+   padding: 1rem;
+   box-shadow: none;
+   height: 16rem;
+   @media (max-width: 1200px) {
+      height: 17rem;
+   }
+   @media (max-width: 1024px) {
+      margin: auto;
+   }
+   @media (max-width: 768px) {
+      margin: auto;
+      height: auto;
+   }
+   @media (max-width: 480px) {
+      width: 80%;
+      text-align: center;
+   }
+`;
+
 const StyledButton = styled(Button)`
    border-radius: 0px;
    color: white;
@@ -197,9 +222,9 @@ const StyledTextField = styled(OutlinedInput)`
 `;
 
 const CopyrightsContainer = styled(Paper)`
-   background-color: ${theme.palette.black[700]};
+   background-color: black;
    color: white;
-   padding: 1rem 0;
+   padding: 1.5rem 0;
    border-radius: 0px;
    text-align: center;
 `;
@@ -212,7 +237,7 @@ const IconBox = styled(Box)`
 
 const StyledLink = styled(Link)`
    text-decoration: none;
-   color: ${theme.palette.black[600]};
+   color: white;
    margin: 0.175rem 0;
    font-weight: 500;
 `;
