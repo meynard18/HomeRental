@@ -75,7 +75,7 @@ export default function SpacingGrid() {
                      </IconBox>
                   </StyledPaper>
                </Grid>
-               <Grid item xs={12} md={7} lg={3}>
+               <Grid item xs={12} md={3} lg={3}>
                   <StyledPaper2>
                      <Typography variant="h6">QUICKLINKS</Typography>
 
@@ -86,7 +86,7 @@ export default function SpacingGrid() {
                      <StyledLink to="#">FAQ's</StyledLink>
                   </StyledPaper2>
                </Grid>
-               <Grid item xs={12} md={7} lg={3}>
+               <Grid item xs={12} md={3} lg={3}>
                   <StyledPaper2>
                      <Typography variant="h6" sx={{ mb: 2 }}>
                         CONTACT US
@@ -152,13 +152,14 @@ const StyledPaper = styled(Paper)`
    @media (max-width: 1024px) {
       margin: auto;
    }
-   @media (max-width: 768px) {
+   @media (max-width: 767px) {
       margin: auto;
       height: auto;
+      align-items: center;
+      text-align: center;
    }
    @media (max-width: 480px) {
       width: 80%;
-      text-align: center;
    }
 `;
 const StyledPaper2 = styled(Paper)`
