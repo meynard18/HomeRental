@@ -106,7 +106,9 @@ const FlexContainer = styled(Box)`
    @media (max-width: 768px) {
       flex-direction: column;
       height: auto;
-      background-color: coral;
+   }
+   @media (max-width: 360px) {
+      width: 95%;
    }
 `;
 const FormContainer = styled(Box)`
@@ -115,9 +117,16 @@ const FormContainer = styled(Box)`
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   @media (max-width: 768px) {
+      width: 100%;
+      padding: 1.25rem 0;
+   }
 `;
 const ImageBox = styled(Box)`
    width: 35rem;
+   @media (max-width: 768px) {
+      width: 100%;
+   }
 `;
 const StyledCardMedia = styled(CardMedia)`
    height: 100%;
@@ -134,6 +143,9 @@ const TypographySub1 = styled(Box)`
 `;
 const StyledForm = styled.form`
    padding: 1rem;
+   @media (max-width: 360px) {
+      width: 100%;
+   }
 `;
 const StyledLabel = styled.label`
    font-size: 0.875rem;
@@ -144,6 +156,9 @@ const StyledInput = styled.input`
    height: 2rem;
    border: 1px solid ${theme.palette.grey[500]};
    border-radius: 2px;
+   @media (max-width: 360px) {
+      width: 100%;
+   }
 `;
 const TypographySub2 = styled(Box)`
    font-size: 1rem;
