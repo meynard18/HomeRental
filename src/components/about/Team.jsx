@@ -51,29 +51,27 @@ const Team = () => {
                   sx={{ fontWeight: 500, fontSize: 40, mt: 1 }}
                >
                   Meet Our Team
-                  {teamMembers.map((item, idx) => (
-                     <FlexContainer>
-                        <StyledCard sx={{ borderRadius: 0 }} key={idx}>
-                           <CardMedia
-                              component="img"
-                              alt="green iguana"
-                              height="300"
-                              image={item.image}
-                           />
-                        </StyledCard>
-                        <MemberInformation>
-                           <TypographyName>{item.fullName}</TypographyName>
-                           <TypographyPosition>
-                              {item.position}
-                           </TypographyPosition>
-                           <TypographyDescription>
-                              {item.description}
-                           </TypographyDescription>
-                        </MemberInformation>
-                     </FlexContainer>
-                  ))}
                </Typography>
             </HeaderBox>
+            {teamMembers.map((item, idx) => (
+               <FlexContainer>
+                  <StyledCard sx={{ borderRadius: 0 }} key={idx}>
+                     <CardMedia
+                        component="img"
+                        alt="green iguana"
+                        height="300"
+                        image={item.image}
+                     />
+                  </StyledCard>
+                  <MemberInformation>
+                     <TypographyName>{item.fullName}</TypographyName>
+                     <TypographyPosition>{item.position}</TypographyPosition>
+                     <TypographyDescription>
+                        {item.description}
+                     </TypographyDescription>
+                  </MemberInformation>
+               </FlexContainer>
+            ))}
          </StyledBox>
       </>
    );
@@ -105,19 +103,46 @@ const Line = styled(Box)`
    background-color: black;
 `;
 const StyledCard = styled(Card)`
-   min-width: 25rem;
+   width: 35rem;
+   @media (max-width: 1024px) {
+      width: 100%;
+      min-width: 20rem;
+      height: auto;
+   }
+   @media (max-width: 768px) {
+      max-width: 20rem;
+   }
+   @media (max-width: 480px) {
+      min-width: 2rem;
+   }
 `;
 const FlexContainer = styled(Box)`
    display: flex;
-   width: 95%;
+   width: 85%;
    margin: 2.5rem auto auto;
    gap: 2.5rem;
+   @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem;
+   }
+   @media (max-width: 480px) {
+      width: 100%;
+      margin: 2.5rem auto auto;
+      gap: 0;
+   }
 `;
 const MemberInformation = styled(Box)`
    display: flex;
    flex-direction: column;
    justify-content: center;
    padding: 1rem;
+   @media (max-width: 768px) {
+      align-items: center;
+      width: 100%;
+      text-align: center;
+   }
 `;
 const TypographyName = styled(Typography)`
    font-size: 1.65rem;

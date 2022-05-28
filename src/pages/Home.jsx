@@ -81,13 +81,13 @@ const StyledBox = styled(Box)`
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-   margin-top: -4.5rem;
+   margin-top: -5.25rem;
  
    }
 `;
 
 const FlexContainer = styled(Box)`
-   padding: 4.5rem 0;
+   padding: 6rem 0;
    display: flex;
    margin: auto;
    width: 90%;

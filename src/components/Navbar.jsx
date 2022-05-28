@@ -71,7 +71,7 @@ const StyledToolbar = styled(Toolbar)`
    width: 90%;
    justify-content: space-between;
    margin: auto;
-   padding: 1.25rem 0;
+   padding: 1.65rem 0;
 `;
 
 const StyledLink = styled(Link)`
@@ -79,4 +79,5 @@ const StyledLink = styled(Link)`
    color: ${theme.palette.black[600]};
    padding: 0.25rem 0.75rem;
    font-weight: 500;
+   font-size: 1.1rem;
 `;

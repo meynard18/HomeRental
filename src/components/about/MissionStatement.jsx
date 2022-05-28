@@ -11,13 +11,13 @@ const MissionStatement = () => {
             <ContentBox>
                <FlexHeader>
                   <Line sx={{ mr: 2 }} />
-                  <Typography
+                  <StyledHeader
                      variant="h3"
                      component="h3"
                      sx={{ fontWeight: 500, fontSize: 40, color: 'white' }}
                   >
                      Mission Statement
-                  </Typography>
+                  </StyledHeader>
                   <Line sx={{ ml: 2 }} />
                </FlexHeader>
                <TypographyBox>
@@ -76,6 +76,12 @@ const TypographyBox = styled(Box)`
    width: 50rem;
    @media (max-width: 768px) {
       width: 95%;
+   }
+`;
+
+const StyledHeader = styled(Typography)`
+   @media (max-width: 480px) {
+      text-align: center;
    }
 `;
 
