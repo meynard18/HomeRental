@@ -77,7 +77,7 @@ const StyledToolbar = styled(Toolbar)`
 const StyledLink = styled(Link)`
    text-decoration: none;
    color: ${theme.palette.black[600]};
-   padding: 0.25rem 0.75rem;
+   padding: 0.25rem 1.5rem;
    font-weight: 500;
    font-size: 1.1rem;
 `;

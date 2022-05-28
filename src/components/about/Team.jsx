@@ -138,6 +138,7 @@ const MemberInformation = styled(Box)`
    flex-direction: column;
    justify-content: center;
    padding: 1rem;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    @media (max-width: 768px) {
       align-items: center;
       width: 100%;

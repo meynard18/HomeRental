@@ -103,6 +103,7 @@ const FlexContainer = styled(Box)`
    margin: 2.5rem auto auto;
    background-color: white;
    height: 25rem;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    @media (max-width: 768px) {
       flex-direction: column;
       height: auto;
