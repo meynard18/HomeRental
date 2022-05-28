@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../CustomTheme';
-import { Box, Typography, CardMedia } from '@mui/material';
 import aboutUs1 from '../images/about1.jpg';
+import MissionStatement from '../components/about/MissionStatement';
+import Team from '../components/about/Team';
+import { Box, Typography, CardMedia } from '@mui/material';
 
 const About = () => {
    return (
@@ -61,6 +63,8 @@ const About = () => {
                   />
                </ImageBox>
             </FlexContainer>
+            <MissionStatement />
+            <Team />
          </StyledBox>
       </>
    );
@@ -101,7 +105,7 @@ const TypographyBox = styled(Box)`
 const FlexContainer = styled(Box)`
    display: flex;
    width: 85%;
-   margin: 1rem auto auto;
+   margin: 2.5rem auto auto;
    gap: 3rem;
    @media (max-width: 768px) {
       flex-direction: column;
@@ -111,16 +115,14 @@ const FlexContainer = styled(Box)`
 
 const ImageBox = styled(Box)`
    width: auto;
-   background-color: red;
    display: flex;
    align-items: center;
 `;
 const StyledCardMedia = styled(CardMedia)`
    object-fit: cover;
-   opacity: 0.4;
 `;
 
 const StyledTypography = styled(Typography)`
    font-size: 1rem;
-   color: black;
+   font-weight: 500;
 `;
