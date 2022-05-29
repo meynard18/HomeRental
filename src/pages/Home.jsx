@@ -102,6 +102,7 @@ const StyledLink = styled(Link)`
    justify-content: space-around;
    align-items: center;
    margin-top: 1rem;
+   border-radius: 2px;
 
    background-color: ${theme.palette.black[500]};
    &:hover {

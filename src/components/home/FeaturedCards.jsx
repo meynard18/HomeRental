@@ -4,6 +4,7 @@ import featured2 from '../../images/featured2.jpg';
 import featured3 from '../../images/featured3.jpg';
 import styled from '@emotion/styled';
 import { theme } from '../../CustomTheme';
+import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import {
    Card,
@@ -127,9 +128,7 @@ const FeaturedCards = () => {
                      </Box>
                   </StyledCardContent>
                   <CardActions>
-                     <StyledButton size="medium" variant="contained">
-                        Schedule Viewing
-                     </StyledButton>
+                     <StyledLink to="/contact">Schedule Viewing</StyledLink>
                   </CardActions>
                </StyledCard>
             ))}
@@ -169,11 +168,15 @@ const IconBox = styled(Box)`
    }
 `;
 
-const StyledButton = styled(Button)`
-   border-radius: 0px;
+const StyledLink = styled(Link)`
    width: 100%;
    margin-top: -0.25rem;
    margin-bottom: 0.5rem;
+   color: white;
+   text-decoration: none;
+   text-align: center;
+   padding: 0.5rem 0;
+   border-radius: 2px;
 
    background-color: ${theme.palette.black[500]};
    &:hover {

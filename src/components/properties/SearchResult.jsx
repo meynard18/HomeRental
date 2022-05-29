@@ -1,6 +1,7 @@
-import styled from '@emotion/styled';
-import { theme } from '../../CustomTheme';
 import React, { useContext } from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
+import { theme } from '../../CustomTheme';
 import { Icon } from '@iconify/react';
 import { PropertyContext } from './PropertiesContext';
 import {
@@ -101,7 +102,7 @@ const SearchResult = () => {
                            </Box>
                         </CardContent>
                      </CardActionArea>
-                     <StyledButton>Schedule Viewing</StyledButton>
+                     <StyledLink to="/contact">Schedule Viewing</StyledLink>
                   </Card>
                </StyledBox>
             ))}
@@ -118,12 +119,16 @@ const StyledBox = styled(Box)`
    }
 `;
 
-const StyledButton = styled(Button)`
-   border-radius: 0px;
+const StyledLink = styled(Link)`
+   border-radius: 2px;
    width: 90%;
    display: flex;
+   justify-content: center;
    margin: 0.25rem auto 1.25rem auto;
    color: white;
+   text-decoration: none;
+   padding: 0.5rem 0;
+
    background-color: ${theme.palette.black[500]};
    &:hover {
       background-color: darkred;

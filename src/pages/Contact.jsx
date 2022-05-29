@@ -33,7 +33,7 @@ const Contact = () => {
                      Get In Touch With Us
                   </TypographySub1>
                   <TypographySub2 variant="subtitle2" component="div">
-                     We look forward hearing from you!
+                     We look forward to hearing from you!
                   </TypographySub2>
                   <StyledForm action="">
                      <InputBoxes>

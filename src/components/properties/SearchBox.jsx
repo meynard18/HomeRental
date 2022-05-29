@@ -178,7 +178,7 @@ const StyledFormControl = styled(FormControl)`
 `;
 
 const StyledButton = styled(Button)`
-   border-radius: 0px;
+   border-radius: 2px;
    width: 100%;
    margin-left: 0.75rem;
    background-color: ${theme.palette.black[500]};
