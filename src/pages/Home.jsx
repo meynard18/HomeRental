@@ -4,17 +4,10 @@ import ChooseUs from '../components/home/ChooseUs';
 import Testimonials from '../components/home/Testimonials';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
-import SearchIcon from '@mui/icons-material/Search';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import home from '../images/heroSection1.jpg';
-import {
-   Box,
-   Typography,
-   InputLabel,
-   Button,
-   FormControl,
-   OutlinedInput,
-   CardMedia,
-} from '@mui/material';
+import { Box, Typography, OutlinedInput, CardMedia } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
    return (
@@ -30,33 +23,20 @@ const Home = () => {
                      Let's Find Your New Home Today
                   </Typography>
                   <Typography variant="h3" component="div" sx={{ mb: 2.5 }}>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Suscipit, quidem?
+                     We are a full-service real estate brokerage franchise
+                     company that boasts a customer satisfaction rating of 98%.
                   </Typography>
-                  <FormContainer>
-                     <FormControl fullWidth>
-                        <InputLabel
-                           htmlFor="location"
-                           placeholder="location"
-                           sx={{ fontSize: 18 }}
-                        >
-                           Location
-                        </InputLabel>
-                        <StyledTextField
-                           label="Location"
-                           sx={{ fontSize: 18 }}
-                        ></StyledTextField>
-                     </FormControl>
-
-                     <StyledButton>
-                        <SearchIcon
-                           sx={{
-                              color: `${theme.palette.bg.main}`,
-                              fontSize: 32,
-                           }}
-                        />
-                     </StyledButton>
-                  </FormContainer>
+                  {/* <FormContainer> */}
+                  <StyledLink to="/properties">
+                     GET STARTED
+                     <ChevronRightIcon
+                        sx={{
+                           color: `${theme.palette.bg.main}`,
+                           fontSize: 32,
+                        }}
+                     />
+                  </StyledLink>
+                  {/* </FormContainer> */}
                </HeaderBox>
                <ImageContainer>
                   <StyledCardMedia
@@ -82,7 +62,8 @@ const StyledBox = styled(Box)`
    background-repeat: no-repeat;
    background-position: center;
    margin-top: -5.25rem;
- 
+   @media (max-width: 768px) {
+      margin-top: -5.5rem;
    }
 `;
 
@@ -104,37 +85,30 @@ const HeaderBox = styled(Box)`
    width: 35rem;
    padding: 1rem;
    @media (max-width: 992px) {
-      width: 100%;
+      width: 90%;
+      margin: 1rem auto auto;
       text-align: center;
    }
 `;
 
-const FormContainer = styled(Box)`
-   background-color: ${theme.palette.grey[500]};
-   padding: 2rem;
-   width: 25rem;
-   display: flex;
-   margin-top: 1.25rem;
-   @media (max-width: 992px) {
-      justify-content: center;
-      margin: auto;
-      width: 80%;
-   }
-   @media (max-width: 768px) {
-      width: 90%;
-   }
-   @media (max-width: 480px) {
-      width: 100%;
-      min-width: 13rem;
-      padding: 0.75rem;
-   }
-`;
-
-const StyledButton = styled(Button)`
+const StyledLink = styled(Link)`
    border-radius: 0px;
+   text-decoration: none;
+   font-size: 1.1rem;
+   padding: 0.65rem 0;
+   color: white;
+   width: 13rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 1rem;
+
    background-color: ${theme.palette.black[500]};
    &:hover {
       background-color: darkred;
+   }
+   @media (max-width: 992px) {
+      margin: 1rem auto auto;
    }
 `;
 
@@ -142,6 +116,7 @@ const ImageContainer = styled(Box)`
    width: 35rem;
    margin: auto;
    @media (max-width: 992px) {
+      margin-top: 3rem;
       width: 90%;
    }
    @media (max-width: 480px) {

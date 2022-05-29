@@ -99,7 +99,7 @@ const Line = styled(Box)`
 const FlexContainer = styled(Box)`
    display: flex;
    justify-content: center;
-   width: 80%;
+   width: 85%;
    margin: 2.5rem auto auto;
    background-color: white;
    height: 25rem;
