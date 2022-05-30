@@ -54,8 +54,8 @@ const Team = () => {
                </Typography>
             </HeaderBox>
             {teamMembers.map((item, idx) => (
-               <FlexContainer>
-                  <StyledCard sx={{ borderRadius: 0 }} key={idx}>
+               <FlexContainer key={idx}>
+                  <StyledCard sx={{ borderRadius: 0 }}>
                      <CardMedia
                         component="img"
                         alt="green iguana"

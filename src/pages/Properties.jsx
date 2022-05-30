@@ -15,19 +15,15 @@ const sortProperties = (property, value) => {
    const d = new Date();
    const datePosted = d.getTime();
    if (value === 0) {
-      console.log('high to low');
       return property.sort((a, b) => b.price - a.price);
    }
    if (value === 1) {
-      console.log(`low to high price`);
       return property.sort((a, b) => a.price - b.price);
    }
    if (value === 2) {
-      console.log('date');
       return property.sort((a, b) => new Date(b.date) - new Date(a.date));
    }
    if (value === 'Default') {
-      console.log('default value');
       return property.sort((a, b) => a.id - b.id);
    }
    return property;

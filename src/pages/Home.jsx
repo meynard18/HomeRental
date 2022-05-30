@@ -61,9 +61,12 @@ const StyledBox = styled(Box)`
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-   margin-top: -5.25rem;
+   margin-top: -6.75rem;
    @media (max-width: 768px) {
-      margin-top: -5.5rem;
+      margin-top: -6.5rem;
+   }
+   @media (max-width: 480px) {
+      margin-top: -7rem;
    }
 `;
 

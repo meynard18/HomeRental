@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Properties from './pages/Properties';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import { theme } from './CustomTheme';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -17,6 +18,7 @@ function App() {
       <ThemeProvider theme={theme}>
          <GlobalData.Provider value={global}>
             <Router>
+               <ScrollToTop />
                <Navbar />
                <Routes>
                   <Route exact path="/" element={<Home />} />
