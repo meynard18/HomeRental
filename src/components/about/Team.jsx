@@ -58,7 +58,7 @@ const Team = () => {
                   <StyledCard sx={{ borderRadius: 0 }}>
                      <CardMedia
                         component="img"
-                        alt="green iguana"
+                        alt={item.fullName + ` ` + `Photo`}
                         height="300"
                         image={item.image}
                      />

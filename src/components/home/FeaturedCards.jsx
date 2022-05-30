@@ -67,7 +67,7 @@ const FeaturedCards = () => {
                <StyledCard sx={{ maxWidth: 345, borderRadius: 0 }} key={idx}>
                   <CardMedia
                      component="img"
-                     alt={item.description + `photo`}
+                     alt={item.description + ` ` + `house image`}
                      height="210"
                      image={item.image}
                   />
