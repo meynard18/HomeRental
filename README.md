@@ -1,5 +1,5 @@
-# #Hello World! Welcome to SOUTHERN CALIFORNIA REAL ESTATE's ReadMe
-
+# #Welcome to SOUTHERN CALIFORNIA REAL ESTATE's ReadMe
+![](src/images/SoutherCaliLogo.png)
 
 # Steps to clone this project
 
