@@ -164,7 +164,8 @@ const SearchContainer = styled(Box)`
 
 const StyledSelect = styled(Select)`
    @media (max-width: 480px) {
-      height: 2rem;
+      height: 2.45rem;
+
    }
 `;
 
@@ -185,6 +186,9 @@ const StyledButton = styled(Button)`
    color: white;
    &:hover {
       background-color: darkred;
+   }
+   @media (max-width: 480px) {
+      margin: auto;
    }
 `;
 
