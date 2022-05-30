@@ -165,7 +165,6 @@ const SearchContainer = styled(Box)`
 const StyledSelect = styled(Select)`
    @media (max-width: 480px) {
       height: 2.45rem;
-
    }
 `;
 
@@ -181,6 +180,7 @@ const StyledFormControl = styled(FormControl)`
 const StyledButton = styled(Button)`
    border-radius: 2px;
    width: 100%;
+   font-size: 0.95rem;
    margin-left: 0.75rem;
    background-color: ${theme.palette.black[500]};
    color: white;
@@ -189,6 +189,8 @@ const StyledButton = styled(Button)`
    }
    @media (max-width: 480px) {
       margin: auto;
+      padding: 0.45rem 0;
+      font-size: 1rem;
    }
 `;
 
