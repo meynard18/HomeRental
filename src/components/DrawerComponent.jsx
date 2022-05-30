@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { Drawer } from '@mui/material';
-import { List } from '@mui/material';
-import { ListItem } from '@mui/material';
-import { ListItemText } from '@mui/material';
-import { IconButton } from '@mui/material';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Link } from 'react-router-dom';
 import { theme } from '../CustomTheme';
 import styled from '@emotion/styled';
+import logo from '../images/logo.svg';
+import {
+   IconButton,
+   ListItemText,
+   ListItem,
+   List,
+   Drawer,
+   Typography,
+} from '@mui/material';
 
 function DrawerComponent() {
    const [openDrawer, setOpenDrawer] = useState(false);
@@ -20,6 +24,9 @@ function DrawerComponent() {
             anchor="left"
          >
             <StyledList>
+               <StyledListItem onClick={() => setOpenDrawer(false)}>
+                  <img src={logo} alt="Southern California Real Estate Logo" />
+               </StyledListItem>
                <StyledListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
                      <StyledLink to="/">Home</StyledLink>
@@ -62,13 +69,16 @@ const StyledLink = styled(Link)`
 `;
 const StyledList = styled(List)`
    height: 100%;
-   width: 15rem;
+   width: 17rem;
    display: flex;
    flex-direction: column;
    align-items: center;
    background-color: ${theme.palette.grey[800]};
    @media (max-width: 360px) {
-      width: 10rem;
+      width: 15rem;
+   }
+   @media (max-width: 280px) {
+      width: 14rem;
    }
 `;
 const StyledDrawer = styled(Drawer)`
