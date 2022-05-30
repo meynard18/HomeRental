@@ -49,7 +49,7 @@ const SearchResult = () => {
                            component="img"
                            height="240"
                            image={item.image}
-                           alt="green iguana"
+                           alt="House Photo"
                         />
                         <CardContent>
                            <Typography
