@@ -44,7 +44,7 @@ function Navbar() {
 
    const activeStyling = ({ isActive }) => {
       return {
-         borderBottom: isActive ? `3px solid red` : '',
+         borderBottom: isActive ? `3px solid ${theme.palette.grey[600]}` : '',
          paddingBottom: isActive ? '1.25rem' : '',
       };
    };
