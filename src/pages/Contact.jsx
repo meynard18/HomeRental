@@ -1,10 +1,77 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../CustomTheme';
 import contactUs from '../images/contactUs.jpg';
 import { Box, Typography, CardMedia, Button } from '@mui/material';
 
 const Contact = () => {
+   const [fullName, setFullName] = useState('');
+   const [email, setEmail] = useState('');
+   const [phoneNumber, setPhoneNumber] = useState('');
+   const [errorName, setErrorName] = useState('');
+   const [errorEmail, setErrorEmail] = useState('');
+   const [errorNumber, setErrorNumber] = useState('');
+
+   const nameInput = useRef();
+   const emailInput = useRef();
+   const phoneInput = useRef();
+
+   const textCheck = /[a-zA-z]{2}/;
+   const emailCheck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   const phoneNumberCheck = /\(?\d{3}\)?? *\d{3}? *?\d{4}/;
+
+   let inputName = fullName;
+   let inputEmail = email;
+   let inputPhoneNumber = phoneNumber;
+
+   const clearInput = () => {
+      setFullName('');
+      setEmail('');
+      setPhoneNumber('');
+      setErrorName('');
+      setErrorEmail('');
+      setErrorNumber('');
+   };
+   const handleSubmit = (e) => {
+      e.preventDefault();
+
+      if (!textCheck.test(inputName)) {
+         // nameInput.focus();
+         nameInput.current.focus();
+         return setErrorName('This Field is Required');
+      }
+
+      if (!emailCheck.test(inputEmail)) {
+         emailInput.current.focus();
+         return setErrorEmail('Enter a valid email address');
+      }
+
+      if (!phoneNumberCheck.test(inputPhoneNumber)) {
+         phoneInput.current.focus();
+         return setErrorNumber('Enter a valid phone number');
+      }
+      alert('Message Sent');
+      clearInput();
+   };
+   const handleName = (e) => {
+      setFullName(e.target.value);
+      if (textCheck.test(inputName)) return setErrorName('');
+   };
+
+   const handleEmail = (e) => {
+      setEmail(e.target.value);
+      if (emailCheck.test(inputEmail)) {
+         return setErrorEmail('');
+      }
+   };
+
+   const handlePhoneNumber = (e) => {
+      setPhoneNumber(e.target.value);
+      if (phoneNumberCheck.test(inputPhoneNumber)) {
+         return setErrorNumber('');
+      }
+   };
+
    return (
       <>
          <StyledBox maxWidth="xxl" sx={{ m: 'auto' }}>
@@ -35,21 +102,39 @@ const Contact = () => {
                   <TypographySub2 variant="subtitle2" component="div">
                      We look forward to hearing from you!
                   </TypographySub2>
-                  <StyledForm action="">
+                  <StyledForm onSubmit={handleSubmit}>
                      <InputBoxes>
                         <StyledLabel htmlFor="">Name</StyledLabel>
                         <br />
-                        <StyledInput type="text" />
+                        <StyledInput
+                           ref={nameInput}
+                           type="text"
+                           value={fullName}
+                           onChange={handleName}
+                        />
+                        <StyledSpan>{errorName}</StyledSpan>
                      </InputBoxes>
                      <InputBoxes>
                         <StyledLabel htmlFor="">Email Address</StyledLabel>
                         <br />
-                        <StyledInput type="text" />
+                        <StyledInput
+                           ref={emailInput}
+                           type="text"
+                           value={email}
+                           onChange={handleEmail}
+                        />
+                        <StyledSpan>{errorEmail}</StyledSpan>
                      </InputBoxes>
                      <InputBoxes>
                         <StyledLabel htmlFor="">Phone</StyledLabel>
                         <br />
-                        <StyledInput type="text" />
+                        <StyledInput
+                           ref={phoneInput}
+                           type="text"
+                           value={phoneNumber}
+                           onChange={handlePhoneNumber}
+                        />
+                        <StyledSpan>{errorNumber}</StyledSpan>
                      </InputBoxes>
                      <StyledButton type="submit" variant="contained">
                         Submit
@@ -141,10 +226,14 @@ const InputBoxes = styled(Box)`
 const TypographySub1 = styled(Box)`
    font-size: 1.5rem;
    font-weight: 500;
+   @media (max-width: 360px) {
+      text-align: center;
+   }
 `;
 const StyledForm = styled.form`
+   width: 25rem;
    padding: 1rem;
-   @media (max-width: 360px) {
+   @media (max-width: 480px) {
       width: 100%;
    }
 `;
@@ -153,8 +242,8 @@ const StyledLabel = styled.label`
    color: ${theme.palette.grey[700]};
 `;
 const StyledInput = styled.input`
-   width: 17rem;
-   height: 2rem;
+   width: 100%;
+   height: 2.15rem;
    border: 1px solid ${theme.palette.grey[500]};
    border-radius: 2px;
    @media (max-width: 360px) {
@@ -163,17 +252,24 @@ const StyledInput = styled.input`
 `;
 const TypographySub2 = styled(Box)`
    font-size: 1rem;
-
    color: ${theme.palette.grey[400]};
+   @media (max-width: 360px) {
+      text-align: center;
+   }
 `;
 
 const StyledButton = styled(Button)`
    border-radius: 0px;
    width: 100%;
-   margin: 1rem auto auto auto;
+   margin: 1.25rem auto auto auto;
    border-radius: 2px;
    background-color: ${theme.palette.black[500]};
    &:hover {
       background-color: darkred;
    }
+`;
+
+const StyledSpan = styled.span`
+   color: red;
+   font-weight: 500;
 `;
