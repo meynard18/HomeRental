@@ -18,7 +18,7 @@ const About = () => {
                      component="h4"
                      sx={{ fontWeight: 500, fontSize: 24 }}
                   >
-                     ??What to put
+                     The Beginning
                   </Typography>
                </FlexHeader>
                <Typography
@@ -32,32 +32,33 @@ const About = () => {
             <FlexContainer>
                <TypographyBox>
                   <StyledTypography variant="body1" component="div">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Excepturi blanditiis illo impedit quae magni et quos
-                     temporibus odit fugit amet voluptas fuga placeat, fugiat
-                     nihil.
+                     Southern California Real Estate is a Los Angeles based
+                     professional real estate management firm that handles over
+                     500+ properties, with the well-defined goal of securing
+                     long term quality tenancies.
                   </StyledTypography>
                   <br />
                   <StyledTypography variant="body1" component="div">
-                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                     Laudantium molestiae animi veritatis officia, impedit
-                     eveniet perferendis accusantium harum? Eos fugit ad labore,
-                     nostrum consequuntur aliquam, culpa cupiditate ratione
-                     officiis necessitatibus officia maxime, maiores alias quis
-                     eaque eveniet? Possimus, iste suscipit.
+                     Founded in 1985, Southern California Real Estate started
+                     its roots in the commercial real estate industry. The
+                     Founder, Jim Crawford, saw the importance of providing
+                     quality property management to the booming residential real
+                     estate industry. Together with his wife, Martha Stewhold a
+                     real estate agent decided to turn their focus on helping
+                     homewoners manage properties by finding quality tenants and
+                     provide neccessary maintaince.
                   </StyledTypography>
                   <br />
                   <StyledTypography variant="body1" component="div">
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                     Nulla ratione rem velit cum temporibus corrupti facere
-                     dolorem? Quod placeat fuga facere numquam libero. Suscipit
-                     voluptatem repellendus accusantium expedita fuga quidem.
+                     Southrn California Real Estate understand how to properly
+                     maintain rentals to attract the best tenant possible,
+                     thereby protecting our property owners rental income and
+                     property value.
                   </StyledTypography>
                </TypographyBox>
                <ImageBox>
                   <StyledCardMedia
                      component="img"
-                     //  height="450"
                      image={aboutUs1}
                      alt="Great Building Architecture"
                   />

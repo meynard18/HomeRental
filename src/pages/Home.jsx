@@ -23,10 +23,10 @@ const Home = () => {
                      Let's Find Your New Home Today
                   </Typography>
                   <Typography variant="h3" component="div" sx={{ mb: 2.5 }}>
-                     We are a full-service real estate brokerage franchise
-                     company that boasts a customer satisfaction rating of 98%.
+                     We are a professional real estate management firm that
+                     boasts a customer satisfaction rating of ninety-eight
+                     percent.
                   </Typography>
-                  {/* <FormContainer> */}
                   <StyledLink to="/properties">
                      GET STARTED
                      <ChevronRightIcon
@@ -36,7 +36,6 @@ const Home = () => {
                         }}
                      />
                   </StyledLink>
-                  {/* </FormContainer> */}
                </HeaderBox>
                <ImageContainer>
                   <StyledCardMedia

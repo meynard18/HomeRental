@@ -24,7 +24,7 @@ const Featured = () => {
                   component="h3"
                   sx={{ fontWeight: 500, fontSize: 40, mt: 1 }}
                >
-                  Lorem Ipsum Homes
+                  Exclusive Homes
                </Typography>
             </HeaderBox>
             <FeaturedCards />

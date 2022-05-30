@@ -10,23 +10,23 @@ const teamMembers = [
    {
       image: team1,
       fullName: 'Emily Jacobs',
-      position: 'License Real Estate Broker',
+      position: 'Property Manager',
       description:
-         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat in dignissimos, magnam adipisci earum voluptates impedit molestias placeat ipsum eligendi!',
+         'Emily has over 12 years of property management experience in the Los Angeles and Inland Empire areas. She oversees an extensive portfolio of properties from our Los Angeles office. Emily is experienced in all areas of property management.',
    },
    {
       image: team2,
       fullName: 'Timothy Johnson',
-      position: 'License Real Estate Broker',
+      position: 'Company Co-founder, Licensed Broker',
       description:
-         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat in dignissimos, magnam adipisci earum voluptates impedit molestias placeat ipsum eligendi!',
+         'With over 25 years of property management experience with our company, Timothy supervises the daily operations of Southern California Real Estate. He is involved with every aspect of the property management department, including staff supervision, problem solving, property maintenance and planning',
    },
    {
       image: team3,
       fullName: 'Cassandra Davis',
-      position: 'License Real Estate Broker',
+      position: 'Property Manager, Licensed Broker',
       description:
-         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat in dignissimos, magnam adipisci earum voluptates impedit molestias placeat ipsum eligendi!',
+         'Cassandra has over 7 years of property management experience in the San Diego County area. She oversees an extensive portfolio of properties from our San Diego office. Emily is experienced in all areas of property management.',
    },
 ];
 

@@ -99,7 +99,7 @@ export default function SpacingGrid() {
                               (window.location = 'mailto:yourmail@domain.com')
                            }
                         >
-                           CaliRealEstate@gmail.com
+                           SoCalREstate@gmail.com
                         </StyledLink>
                      </FlexContact>
 
@@ -107,14 +107,24 @@ export default function SpacingGrid() {
                         sx={{ display: 'flex', alignItems: 'center' }}
                      >
                         <Icon icon="ant-design:phone-outlined" height={24} />
-                        <span>1234444</span>
+                        323-400-9002
+                     </FlexContact>
+                     <FlexContact
+                        sx={{
+                           display: 'flex',
+                           alignItems: 'center',
+                           textAlign: 'center',
+                        }}
+                     >
+                        <Icon icon="ant-design:home-outlined" height={34} />
+                        9171 Wilshire Boulevard, Beverly Hills, CA 90210
                      </FlexContact>
                   </StyledPaper2>
                </Grid>
             </StyledGrid>
             <Grid item xs={12}>
                <CopyrightsContainer>
-                  Copyrights &copy; 2022 Company Name
+                  Copyrights &copy; 2022 Southern California Real Estate
                </CopyrightsContainer>
             </Grid>
          </MainContainer>
@@ -246,4 +256,5 @@ const StyledLink = styled(Link)`
 const FlexContact = styled(Box)`
    display: flex;
    align-items: center;
+   margin: 0.25rem auto;
 `;
