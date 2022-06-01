@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Properties from './pages/Properties';
 import Footer from './components/Footer';
+import Login from './pages/Login';
 import ScrollToTop from './components/ScrollToTop';
 import { theme } from './CustomTheme';
 import { ThemeProvider } from '@mui/material/styles';
@@ -25,6 +26,7 @@ function App() {
                   <Route exact path="/about" element={<About />} />
                   <Route exact path="/properties" element={<Properties />} />
                   <Route exact path="/contact" element={<Contact />} />
+                  <Route exact path="login" element={<Login />} />
                </Routes>
                <Footer />
             </Router>

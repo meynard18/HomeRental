@@ -67,7 +67,6 @@ function Navbar() {
                         <StyledLink
                            style={activeStyling}
                            onClick={handleActive}
-                           className="route-links"
                            component="button"
                            to="/"
                            variant="body2"
@@ -77,7 +76,6 @@ function Navbar() {
                         <StyledLink
                            style={activeStyling}
                            onClick={handleActive}
-                           className="route-links"
                            to="/about"
                         >
                            About Us
@@ -85,7 +83,6 @@ function Navbar() {
                         <StyledLink
                            style={activeStyling}
                            onClick={handleActive}
-                           className="route-links"
                            to="/properties"
                         >
                            Properties
@@ -93,11 +90,11 @@ function Navbar() {
                         <StyledLink
                            style={activeStyling}
                            onClick={handleActive}
-                           className="route-links"
                            to="/contact"
                         >
                            Contact Us
                         </StyledLink>
+                        <StyledLogin to="/login">Login</StyledLogin>
                      </div>
                   )}
                </StyledToolbar>
@@ -125,6 +122,22 @@ const StyledLink = styled(NavLink)`
    font-weight: 500;
    font-size: 1.1rem;
    margin: 0.5rem 1rem;
+`;
+
+const StyledLogin = styled(Link)`
+   text-decoration: none;
+   color: ${theme.palette.black[600]};
+   padding: 0.3rem 1.5rem;
+   font-weight: 500;
+   font-size: 1.1rem;
+   margin: 0.5rem 1rem;
+   border: 2px solid ${theme.palette.grey[200]};
+   border-radius: 2px;
+
+   &:hover {
+      color: darkred;
+      border: 2px solid darkred;
+   }
 `;
 
 const StyledLogo = styled(Link)`
