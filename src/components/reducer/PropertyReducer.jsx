@@ -276,7 +276,6 @@ const filteredProperty = (property, location, bedroom, bathroom, price) => {
 const propertyReducer = (state, action) => {
    switch (action.type) {
       case 'SET_LOCATION':
-         console.log('setlocation');
          return {
             ...state,
             location: action.payload,
@@ -302,7 +301,6 @@ const propertyReducer = (state, action) => {
       // / need to create additional case for sorting////
       // /set_sortBy is just capturing the value of the onclick function///
       case 'SET_SORTVALUE':
-         console.log('whats goign on ??');
          return {
             ...state,
             sortBy: action.payload,

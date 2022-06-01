@@ -17,7 +17,6 @@ const SortProperties = () => {
    } = useContext(PropertyContext);
 
    const handleSort = (e) => {
-      console.log('sorting');
       dispatch({
          type: 'SET_SORTVALUE',
          payload: e.target.value,

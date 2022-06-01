@@ -23,7 +23,7 @@ const Home = () => {
                      Let's Find Your New Home Today
                   </Typography>
                   <Typography variant="h3" component="div" sx={{ mb: 2.5 }}>
-                     We are a professional real estate management firm that
+                     We are a real estate management firm that
                      boasts a customer satisfaction rating of ninety-eight
                      percent.
                   </Typography>

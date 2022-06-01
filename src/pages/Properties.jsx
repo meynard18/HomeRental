@@ -14,19 +14,18 @@ import SortProperties from '../components/properties/SortProperties';
 const sortProperties = (property, value) => {
    const d = new Date();
    const datePosted = d.getTime();
-   if (value === 0) {
-      return property.sort((a, b) => b.price - a.price);
+   switch (value) {
+      case 0:
+         return property.sort((a, b) => b.price - a.price);
+      case 1:
+         return property.sort((a, b) => a.price - b.price);
+      case 2:
+         return property.sort((a, b) => new Date(b.date) - new Date(a.date));
+      case 'Default':
+         return property.sort((a, b) => a.id - b.id);
+      default:
+         throw new Error('No action');
    }
-   if (value === 1) {
-      return property.sort((a, b) => a.price - b.price);
-   }
-   if (value === 2) {
-      return property.sort((a, b) => new Date(b.date) - new Date(a.date));
-   }
-   if (value === 'Default') {
-      return property.sort((a, b) => a.id - b.id);
-   }
-   return property;
 };
 
 const Properties = () => {
