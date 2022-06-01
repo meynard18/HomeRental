@@ -94,62 +94,64 @@ const Contact = () => {
                   Contact Us
                </Typography>
             </HeaderBox>
-            <FlexContainer>
-               <FormContainer>
-                  <TypographySub1 variant="subtitle1" component="div">
-                     Get In Touch With Us
-                  </TypographySub1>
-                  <TypographySub2 variant="subtitle2" component="div">
-                     We look forward to hearing from you!
-                  </TypographySub2>
-                  <StyledForm onSubmit={handleSubmit}>
-                     <InputBoxes>
-                        <StyledLabel htmlFor="">Name</StyledLabel>
-                        <br />
-                        <StyledInput
-                           ref={nameInput}
-                           type="text"
-                           value={fullName}
-                           onChange={handleName}
-                        />
-                        <StyledSpan>{errorName}</StyledSpan>
-                     </InputBoxes>
-                     <InputBoxes>
-                        <StyledLabel htmlFor="">Email Address</StyledLabel>
-                        <br />
-                        <StyledInput
-                           ref={emailInput}
-                           type="text"
-                           value={email}
-                           onChange={handleEmail}
-                        />
-                        <StyledSpan>{errorEmail}</StyledSpan>
-                     </InputBoxes>
-                     <InputBoxes>
-                        <StyledLabel htmlFor="">Phone</StyledLabel>
-                        <br />
-                        <StyledInput
-                           ref={phoneInput}
-                           type="text"
-                           value={phoneNumber}
-                           onChange={handlePhoneNumber}
-                        />
-                        <StyledSpan>{errorNumber}</StyledSpan>
-                     </InputBoxes>
-                     <StyledButton type="submit" variant="contained">
-                        Submit
-                     </StyledButton>
-                  </StyledForm>
-               </FormContainer>
-               <ImageBox>
-                  <StyledCardMedia
-                     component="img"
-                     //  height="450"
-                     image={contactUs}
-                     alt="Great Building Architecture"
-                  />
-               </ImageBox>
-            </FlexContainer>
+            <SubContainer>
+               <FlexContainer>
+                  <FormContainer>
+                     <TypographySub1 variant="subtitle1" component="div">
+                        Get In Touch With Us
+                     </TypographySub1>
+                     <TypographySub2 variant="subtitle2" component="div">
+                        We look forward to hearing from you!
+                     </TypographySub2>
+                     <StyledForm onSubmit={handleSubmit}>
+                        <InputBoxes>
+                           <StyledLabel htmlFor="">Name</StyledLabel>
+                           <br />
+                           <StyledInput
+                              ref={nameInput}
+                              type="text"
+                              value={fullName}
+                              onChange={handleName}
+                           />
+                           <StyledSpan>{errorName}</StyledSpan>
+                        </InputBoxes>
+                        <InputBoxes>
+                           <StyledLabel htmlFor="">Email Address</StyledLabel>
+                           <br />
+                           <StyledInput
+                              ref={emailInput}
+                              type="text"
+                              value={email}
+                              onChange={handleEmail}
+                           />
+                           <StyledSpan>{errorEmail}</StyledSpan>
+                        </InputBoxes>
+                        <InputBoxes>
+                           <StyledLabel htmlFor="">Phone</StyledLabel>
+                           <br />
+                           <StyledInput
+                              ref={phoneInput}
+                              type="text"
+                              value={phoneNumber}
+                              onChange={handlePhoneNumber}
+                           />
+                           <StyledSpan>{errorNumber}</StyledSpan>
+                        </InputBoxes>
+                        <StyledButton type="submit" variant="contained">
+                           Submit
+                        </StyledButton>
+                     </StyledForm>
+                  </FormContainer>
+                  <ImageBox>
+                     <StyledCardMedia
+                        component="img"
+                        //  height="450"
+                        image={contactUs}
+                        alt="Great Building Architecture"
+                     />
+                  </ImageBox>
+               </FlexContainer>
+            </SubContainer>
          </StyledBox>
       </>
    );
@@ -181,13 +183,22 @@ const Line = styled(Box)`
    background-color: black;
 `;
 
+const SubContainer = styled(Box)`
+   background-color: ${theme.palette.grey[500]};
+   width: 65rem;
+   height: 40rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 2.5rem auto auto auto;
+`;
 const FlexContainer = styled(Box)`
    display: flex;
    justify-content: center;
-   width: 85%;
-   margin: 2.5rem auto auto;
+   width: 90%;
    background-color: white;
-   height: 25rem;
+   height: 32rem;
+   border-radius: 5px;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    @media (max-width: 768px) {
       flex-direction: column;
@@ -210,12 +221,15 @@ const FormContainer = styled(Box)`
 `;
 const ImageBox = styled(Box)`
    width: 35rem;
+   border-radius: 5px;
    @media (max-width: 768px) {
       width: 100%;
    }
 `;
 const StyledCardMedia = styled(CardMedia)`
    height: 100%;
+   border-top-right-radius: 2px;
+   border-bottom-right-radius: 2px;
    @media (max-width: 768px) {
       height: auto;
    }
@@ -231,7 +245,7 @@ const TypographySub1 = styled(Box)`
    }
 `;
 const StyledForm = styled.form`
-   width: 25rem;
+   width: 22rem;
    padding: 1rem;
    @media (max-width: 480px) {
       width: 100%;
