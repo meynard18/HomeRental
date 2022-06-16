@@ -80,6 +80,12 @@ const FlexContainer = styled(Box)`
    gap: 1rem;
    margin-top: 3.5rem;
    padding-bottom: 4rem;
+
+   @media (max-width: 1200px) {
+      margin-right: auto;
+      margin-left: auto;
+      width: 90%;
+   }
    @media (max-width: 992px) {
       flex-direction: column;
    }

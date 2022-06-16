@@ -23,9 +23,8 @@ const Home = () => {
                      Let's Find Your New Home Today
                   </Typography>
                   <Typography variant="h3" component="div" sx={{ mb: 2.5 }}>
-                     We are a real estate management firm that
-                     boasts a customer satisfaction rating of ninety-eight
-                     percent.
+                     We are a real estate management firm that boasts a customer
+                     satisfaction rating of ninety-eight percent.
                   </Typography>
                   <StyledLink to="/properties">
                      GET STARTED
@@ -77,13 +76,15 @@ const FlexContainer = styled(Box)`
    @media (max-width: 992px) {
       flex-direction: column;
    }
+   @media (max-width: 992px) {
+      flex-direction: column;
+   }
 `;
 const HeaderBox = styled(Box)`
    display: flex;
    flex-direction: column;
    justify-content: center;
-   margin-top: 2.5rem;
-   // width: 70%;
+   margin: 2.5rem auto auto auto;
    width: 35rem;
    padding: 1rem;
    @media (max-width: 992px) {

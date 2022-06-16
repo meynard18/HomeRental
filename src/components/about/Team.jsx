@@ -19,7 +19,7 @@ const teamMembers = [
       fullName: 'Timothy Johnson',
       position: 'Company Co-founder, Licensed Broker',
       description:
-         'With over 25 years of property management experience, Timothy supervises the daily operations of So Cal Real Estate. He is involved with every aspect of the property management, including staff supervision, maintenance and planning',
+         'With over 25 years of property management experience, Timothy supervises the daily operations of So Cal Real Estate. He is involved with every aspect of the property management, including staff supervision, maintenance and planning.',
    },
    {
       image: team3,
@@ -104,7 +104,6 @@ const Line = styled(Box)`
 `;
 const StyledCard = styled(Card)`
    width: 35rem;
-   background-color: red;
    @media (max-width: 1024px) {
       width: 100%;
       min-width: 20rem;
