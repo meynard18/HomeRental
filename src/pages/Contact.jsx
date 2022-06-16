@@ -144,9 +144,8 @@ const Contact = () => {
                <ImageBox>
                   <StyledCardMedia
                      component="img"
-                     //  height="450"
                      image={contactUs}
-                     alt="Great Building Architecture"
+                     alt="office lobby"
                   />
                </ImageBox>
             </FlexContainer>
@@ -184,11 +183,15 @@ const Line = styled(Box)`
 const FlexContainer = styled(Box)`
    display: flex;
    justify-content: center;
-   width: 85%;
+   width: 80%;
    margin: 2.5rem auto auto;
+   height: 40rem;
    background-color: white;
-   height: 25rem;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+   @media (max-width: 1024px) {
+      height: 35rem;
+   }
    @media (max-width: 768px) {
       flex-direction: column;
       height: auto;
@@ -198,27 +201,23 @@ const FlexContainer = styled(Box)`
    }
 `;
 const FormContainer = styled(Box)`
-   width: 35rem;
+   // padding: 0 2rem;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   // flex-basis: 1;
+   width: 100%;
    @media (max-width: 768px) {
       width: 100%;
-      padding: 1.25rem 0;
+      padding: 4rem 2rem;
    }
 `;
 const ImageBox = styled(Box)`
-   width: 35rem;
-   @media (max-width: 768px) {
-      width: 100%;
-   }
+   width: 100%;
 `;
 const StyledCardMedia = styled(CardMedia)`
    height: 100%;
-   @media (max-width: 768px) {
-      height: auto;
-   }
 `;
 const InputBoxes = styled(Box)`
    padding: 0.5rem 0 0 0;
@@ -233,8 +232,16 @@ const TypographySub1 = styled(Box)`
 const StyledForm = styled.form`
    width: 25rem;
    padding: 1rem;
+
+   @media (max-width: 1024px) {
+      width: 85%;
+   }
+   @media (max-width: 768px) {
+      width: 95%;
+   }
    @media (max-width: 480px) {
       width: 100%;
+      padding: 1rem 0.5rem;
    }
 `;
 const StyledLabel = styled.label`
