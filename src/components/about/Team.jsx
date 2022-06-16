@@ -19,7 +19,7 @@ const teamMembers = [
       fullName: 'Timothy Johnson',
       position: 'Company Co-founder, Licensed Broker',
       description:
-         'With over 25 years of property management experience with our company, Timothy supervises the daily operations of Southern California Real Estate. He is involved with every aspect of the property management department, including staff supervision, problem solving, property maintenance and planning',
+         'With over 25 years of property management experience, Timothy supervises the daily operations of So Cal Real Estate. He is involved with every aspect of the property management, including staff supervision, maintenance and planning',
    },
    {
       image: team3,
@@ -58,8 +58,8 @@ const Team = () => {
                   <StyledCard sx={{ borderRadius: 0 }}>
                      <CardMedia
                         component="img"
-                        alt={item.fullName + ` ` + `Photo`}
-                        height="300"
+                        alt={`${item.fullName} photo`}
+                        height="250"
                         image={item.image}
                      />
                   </StyledCard>
@@ -104,6 +104,7 @@ const Line = styled(Box)`
 `;
 const StyledCard = styled(Card)`
    width: 35rem;
+   background-color: red;
    @media (max-width: 1024px) {
       width: 100%;
       min-width: 20rem;
@@ -116,6 +117,7 @@ const StyledCard = styled(Card)`
       min-width: 2rem;
    }
 `;
+
 const FlexContainer = styled(Box)`
    display: flex;
    width: 85%;
@@ -137,7 +139,8 @@ const MemberInformation = styled(Box)`
    display: flex;
    flex-direction: column;
    justify-content: center;
-   padding: 1rem;
+   align-center: center;
+   padding: 1rem 3rem;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    @media (max-width: 768px) {
       align-items: center;
